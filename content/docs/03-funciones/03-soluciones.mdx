@@ -1,0 +1,67 @@
+---
+title: "3.3 Soluciones — Funciones"
+sidebar: { order: 3 }
+module: unit-03
+status: core
+evaluated: false
+visibility: instructor-or-after-attempt
+---
+
+## 1. Perímetro de un rectángulo
+
+```python
+def calcular_perimetro_rectangulo(ancho, alto):
+    return 2 * (ancho + alto)
+```
+
+## 2. Conversión de minutos
+
+```python
+def convertir_minutos(minutos):
+    return minutos // 60, minutos % 60
+```
+
+## 3. Presentar nombre sin condicionales
+
+```python
+def presentar_nombre(nombre, prefijo="Est."):
+    return f"{prefijo} {nombre.title()}"
+```
+
+El valor predeterminado de `prefijo` participa directamente en el resultado, sin necesitar condicionales que todavía no se estudian en esta unidad.
+
+## 4. Estado de aprobación
+
+```python
+def esta_aprobado(nota, minimo=6.0):
+    return nota >= minimo
+```
+
+## 5. Tasa sin variable global
+
+```python
+def calcular_impuesto(monto, tasa=0.12):
+    return monto * tasa
+```
+
+La tasa ya no se lee de una variable externa: ahora llega como parámetro con un valor predeterminado.
+
+## 6. Resumen de una lista
+
+```python
+def resumir_lista(datos):
+    return min(datos), max(datos), len(datos)
+```
+
+## 7. Composición de funciones
+
+```python
+def calcular_total(precio, cantidad):
+    return precio * cantidad
+
+def crear_resumen(precio, cantidad):
+    total = calcular_total(precio, cantidad)
+    return f"Cantidad: {cantidad} | Total: ${total:.2f}"
+```
+
+`crear_resumen` no repite el cálculo: reutiliza `calcular_total` para obtener el mismo resultado.

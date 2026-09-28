@@ -1,0 +1,177 @@
+version: 1
+
+module:
+  id: unit-06
+  number: 6
+  slug: pandas
+  title: Procesamiento de datos con Pandas
+  status: core
+  evaluated: true
+  source:
+    sheet: Contenidos
+    range: A43:C67
+
+purpose: >-
+  Crear, consultar, transformar y resumir datos tabulares básicos mediante
+  Series y DataFrame.
+
+prerequisites:
+  - unit-05
+
+learning_outcomes:
+  - Crear Series y DataFrame desde estructuras simples.
+  - Trabajar con índices numéricos y no numéricos.
+  - Seleccionar filas y columnas mediante operaciones explícitas.
+  - Importar y exportar archivos CSV con parámetros básicos.
+  - Aplicar operaciones aritméticas, comparaciones y filtros booleanos.
+  - Ordenar, agrupar y resumir datos por categoría.
+
+core_topics:
+  - id: u06-t01
+    title: Introducción a Pandas
+    status: core
+    evaluated: true
+  - id: u06-t02
+    title: Creación de Series y DataFrame
+    status: core
+    evaluated: true
+    sources:
+      - listas
+      - diccionarios
+      - arreglos unidimensionales
+  - id: u06-t03
+    title: Índices en Series y DataFrame
+    status: core
+    evaluated: true
+    concepts:
+      - índices numéricos
+      - índices no numéricos
+  - id: u06-t04
+    title: Selección de filas
+    status: core
+    evaluated: true
+    methods:
+      - .loc
+      - .iloc
+  - id: u06-t05
+    title: Selección y creación de columnas
+    status: core
+    evaluated: true
+  - id: u06-t06
+    title: Inspección y estadística descriptiva
+    status: core
+    evaluated: true
+    methods:
+      - .info
+      - .describe
+      - .mean
+      - .sum
+      - .min
+      - .max
+      - .head
+      - .tail
+  - id: u06-t07
+    title: Lectura y escritura de CSV
+    status: core
+    evaluated: true
+    methods:
+      - pd.read_csv
+      - DataFrame.to_csv
+      - Series.to_csv
+    read_csv_parameters:
+      - sep
+      - header
+      - index_col
+  - id: u06-t08
+    title: Operaciones aritméticas entre Series
+    status: core
+    evaluated: true
+  - id: u06-t09
+    title: Comparaciones y filtros booleanos
+    status: core
+    evaluated: true
+    operators:
+      - "&"
+      - "|"
+    prohibited_alternatives:
+      - and
+      - or
+  - id: u06-t10
+    title: Reemplazo condicional
+    status: core
+    evaluated: true
+    methods:
+      - .mask
+    optional_methods:
+      - np.select
+  - id: u06-t11
+    title: Localización de extremos
+    status: core
+    evaluated: true
+    methods:
+      - .idxmax
+      - .idxmin
+  - id: u06-t12
+    title: Ordenamiento
+    status: core
+    evaluated: true
+    methods:
+      - .sort_values
+    concepts:
+      - ordenar por una columna
+      - ordenar por varias columnas
+      - inplace=True
+  - id: u06-t13
+    title: Valores únicos, frecuencias y pertenencia
+    status: core
+    evaluated: true
+    methods:
+      - .unique
+      - .value_counts
+      - .isin
+  - id: u06-t14
+    title: Agrupación por categoría
+    status: core
+    evaluated: true
+    methods:
+      - .groupby
+
+assessment_evidence:
+  - Construye una Series y un DataFrame desde datos simples.
+  - Selecciona filas mediante loc e iloc y explica la diferencia.
+  - Importa un CSV indicando parámetros relevantes.
+  - Construye un filtro compuesto con & o |.
+  - Ordena y agrupa un DataFrame para responder una pregunta concreta.
+
+restrictions:
+  - id: u06-r01
+    status: prohibited
+    rule: En filtros de Pandas se utilizan & y | en lugar de and y or.
+
+excluded_topics: []
+
+supplementary_topics:
+  - id: u06-s01
+    title: Visualización básica con Pandas y Matplotlib
+    status: supplementary
+    evaluated: false
+    publish: true
+    label: No evaluable
+    source_note: Bloque tachado y marcado como no evaluable por Coordinación.
+    concepts:
+      - .plot en Series y DataFrame
+      - gráficos de líneas
+      - gráficos de barras
+      - histogramas
+      - boxplots
+      - visualización de top N y bottom N
+      - gráficos agrupados por categoría
+
+pages:
+  index: content/docs/06-pandas/index.mdx
+  content: content/docs/06-pandas/01-contenido.mdx
+  practice: content/docs/06-pandas/02-practica.mdx
+  solutions: content/docs/06-pandas/03-soluciones.mdx
+  supplementary: content/docs/06-pandas/04-visualizacion-no-evaluable.mdx
+materials_catalog: content/materials/06-pandas.yaml
+

@@ -1,0 +1,119 @@
+---
+title: "3.1 Funciones, parámetros y retornos"
+sidebar: { order: 1 }
+module: unit-03
+status: core
+evaluated: true
+---
+
+## Definir y llamar
+
+```python
+def calcular_area_rectangulo(ancho, alto):
+    area = ancho * alto
+    return area
+
+resultado = calcular_area_rectangulo(5, 3)
+print(resultado)
+```
+
+- `def` inicia la definición.
+- `ancho` y `alto` son parámetros.
+- `5` y `3` son argumentos.
+- `return` entrega el resultado a quien llamó la función.
+
+Una función debe tener una responsabilidad clara. `calcular_area_rectangulo` es mejor nombre que `hacer_cosa`.
+
+## Parámetros por defecto
+
+```python
+def crear_mensaje(nombre, saludo="Hola"):
+    return f"{saludo}, {nombre}"
+
+print(crear_mensaje("Ana"))
+print(crear_mensaje("Luis", "Bienvenido"))
+```
+
+Los parámetros obligatorios se ubican antes de los que tienen valor por defecto.
+
+## Retornar no es imprimir
+
+```python
+def duplicar(numero):
+    return numero * 2
+
+doble = duplicar(8)
+print(doble)
+```
+
+`return` permite reutilizar el resultado. Una función que solo imprime limita esa reutilización.
+
+## Retornos múltiples
+
+```python
+def extremos(datos):
+    menor = min(datos)
+    mayor = max(datos)
+    return menor, mayor
+
+minimo, maximo = extremos([8, 3, 12, 5])
+print(minimo, maximo)
+```
+
+La asignación múltiple debe tener la misma cantidad de nombres que de valores retornados.
+
+## Sin variables globales
+
+Una función no debe leer variables externas. Todos los datos que necesita deben aparecer en su firma:
+
+```python
+def calcular_impuesto(monto, tasa=0.12):
+    return monto * tasa
+```
+
+Así la dependencia es explícita y fácil de probar. Una versión que recibiera únicamente `monto` pero leyera `tasa` desde fuera de la función no está permitida en esta materia.
+
+## Funciones booleanas
+
+Una función booleana devuelve `True` o `False`:
+
+```python
+def esta_en_rango(valor, minimo, maximo):
+    return minimo <= valor <= maximo
+
+print(esta_en_rango(7, 0, 10))
+```
+
+No es necesario comparar el resultado con `True`.
+
+## Composición
+
+```python
+def convertir_celsius_fahrenheit(celsius):
+    return celsius * 9 / 5 + 32
+
+def crear_reporte(celsius):
+    fahrenheit = convertir_celsius_fahrenheit(celsius)
+    return f"{celsius:.1f} °C equivalen a {fahrenheit:.1f} °F"
+
+print(crear_reporte(25))
+```
+
+## Errores frecuentes
+
+- Olvidar llamar la función: `calcular_area_rectangulo` no ejecuta; `calcular_area_rectangulo(5, 3)` sí.
+- Imprimir dentro cuando se necesita retornar.
+- Usar una variable global oculta.
+- Confundir parámetro con argumento.
+- Ejecutar instrucciones después de `return` esperando que se procesen.
+
+## Comprobación
+
+1. ¿Qué ventaja ofrece `return` frente a `print()`?
+2. ¿Por qué las dependencias deben aparecer como parámetros?
+3. ¿Qué retorna `return menor, mayor`?
+4. Escribe la firma de una función con un parámetro obligatorio y uno predeterminado.
+
+## Recurso oficial
+
+- [Definición de funciones y argumentos predeterminados](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)

@@ -1,0 +1,247 @@
+---
+title: "Decisiones y repeticiones"
+module: unit-04
+lesson: u04-content
+status: core
+evaluated: true
+---
+
+## 1. Condicionales
+
+Una condición produce `True` o `False`. `if` ejecuta un bloque cuando la condición se cumple.
+
+```python
+temperatura = 31
+
+if temperatura > 30:
+    print("Día caluroso")
+```
+
+Use `if-else` para dos caminos excluyentes:
+
+```python
+nota = 7.4
+
+if nota >= 6:
+    print("Aprobado")
+else:
+    print("Reprobado")
+```
+
+Use `if-elif-else` para varias alternativas. El orden importa: Python ejecuta el primer bloque cuya condición sea verdadera.
+
+```python
+nota = 8.7
+
+if nota >= 9:
+    categoria = "Excelente"
+elif nota >= 8:
+    categoria = "Muy bueno"
+elif nota >= 6:
+    categoria = "Aprobado"
+else:
+    categoria = "Reprobado"
+```
+
+Las condiciones pueden combinarse con `and`, `or` y `not`:
+
+```python
+edad = 19
+tiene_documento = True
+
+if edad >= 18 and tiene_documento:
+    print("Puede ingresar")
+```
+
+## 2. Recorridos con `for`
+
+### Con `range`
+
+`range(inicio, fin, paso)` genera enteros desde `inicio` hasta antes de `fin`.
+
+```python
+for numero in range(2, 11, 2):
+    print(numero)
+```
+
+### Sobre una colección
+
+Si solo necesita cada valor, recorra directamente la colección.
+
+```python
+ciudades = ["Guayaquil", "Quito", "Cuenca"]
+
+for ciudad in ciudades:
+    print(ciudad)
+```
+
+### Con `enumerate`
+
+Use `enumerate` cuando necesite al mismo tiempo la posición y el valor.
+
+```python
+notas = [8.5, 7.2, 9.1]
+
+for posicion, nota in enumerate(notas):
+    print(posicion, nota)
+```
+
+## 3. Estructuras anidadas
+
+Una estructura de control puede contener otra. La indentación permite reconocer cada nivel.
+
+```python
+grupos = ["A", "B"]
+semanas = 3
+
+for grupo in grupos:
+    for semana in range(1, semanas + 1):
+        print(grupo, semana)
+```
+
+También se puede colocar una decisión dentro de un recorrido:
+
+```python
+notas = [8.4, 5.2, 7.0]
+
+for nota in notas:
+    if nota >= 6:
+        print(nota, "aprobada")
+    else:
+        print(nota, "reprobada")
+```
+
+## 4. Máximos y mínimos, con y sin empates
+
+### Máximo sin empate
+
+Cuando se necesita únicamente el valor mayor y no hay empate, `max()` resuelve la búsqueda:
+
+```python
+ventas = [120, 180, 95, 140]
+mayor_venta = max(ventas)
+posicion_mayor = ventas.index(mayor_venta)
+print(mayor_venta, posicion_mayor)
+```
+
+### Máximo con empate
+
+Si el problema pide todas las posiciones, primero se obtiene el máximo y luego se recopilan sus coincidencias.
+
+```python
+ventas = [120, 180, 95, 180]
+mayor_venta = max(ventas)
+posiciones = []
+
+for posicion, venta in enumerate(ventas):
+    if venta == mayor_venta:
+        posiciones.append(posicion)
+
+print(mayor_venta, posiciones)
+```
+
+### Mínimo sin empate
+
+```python
+tiempos = [42, 38, 45, 40]
+menor_tiempo = min(tiempos)
+posicion_menor = tiempos.index(menor_tiempo)
+print(menor_tiempo, posicion_menor)
+```
+
+### Mínimo con empate
+
+```python
+tiempos = [42, 38, 45, 38]
+menor_tiempo = min(tiempos)
+posiciones = []
+
+for posicion, tiempo in enumerate(tiempos):
+    if tiempo == menor_tiempo:
+        posiciones.append(posicion)
+
+print(menor_tiempo, posiciones)
+```
+
+`index()` basta cuando solo se necesita la primera posición. El recorrido con `enumerate()` conserva todas las posiciones cuando existe empate.
+
+## 5. Listas sin valores repetidos
+
+Se puede construir una lista nueva agregando únicamente valores que todavía no estén presentes.
+
+```python
+datos = ["A", "B", "A", "C", "B"]
+sin_repetidos = []
+
+for dato in datos:
+    if dato not in sin_repetidos:
+        sin_repetidos.append(dato)
+
+print(sin_repetidos)
+```
+
+Este algoritmo conserva el orden de la primera aparición.
+
+## 6. Comprensiones de listas
+
+Antes de usar una comprensión, hay que poder explicar su ciclo y su condición. Esta solución tradicional:
+
+```python
+cuadrados_pares = []
+
+for numero in range(1, 7):
+    if numero % 2 == 0:
+        cuadrados_pares.append(numero ** 2)
+```
+
+se puede expresar así:
+
+```python
+cuadrados_pares = [numero ** 2 for numero in range(1, 7) if numero % 2 == 0]
+```
+
+Se lee: “para cada número del 1 al 6, si es par, guardar su cuadrado”. Si esa explicación no resulta clara, use el ciclo tradicional.
+
+## 7. `while`: al final de la unidad
+
+`while` repite mientras su condición sea verdadera. Antes de escribirlo, identifique:
+
+1. el estado inicial;
+2. la condición de repetición;
+3. la actualización que acerca el ciclo a su fin.
+
+```python
+saldo = 0
+meta = 100
+aporte = 20
+
+while saldo < meta:
+    saldo = saldo + aporte
+    print(saldo)
+```
+
+Cuando la condición empieza a ser extensa, puede expresarse mediante una función booleana.
+
+```python
+def puede_seguir(acumulado, limite, incremento):
+    return acumulado + incremento <= limite
+
+
+total = 0
+limite = 25
+incremento = 6
+
+while puede_seguir(total, limite, incremento):
+    total = total + incremento
+```
+
+La función recibe todos sus datos; no depende de variables globales. Evite una variable `True`/`False` usada solo para encender o apagar el ciclo: la condición debe describir directamente por qué se repite.
+
+## Lista de control
+
+- ¿Las alternativas están ordenadas de la más específica a la más general?
+- ¿Uso `enumerate` solamente cuando necesito posición y valor?
+- ¿Conservo todos los empates cuando el problema lo pide?
+- ¿Puedo explicar una comprensión paso a paso?
+- ¿La actualización del `while` conduce al fin?
+- ¿La solución respeta las construcciones prohibidas de esta unidad?

@@ -1,0 +1,191 @@
+---
+title: "1.2 Programación aplicada a distintas carreras"
+description: "Cómo reconocer entradas, procesos y salidas en problemas de distintas disciplinas."
+sidebar:
+  order: 2
+module: unit-01
+topic: u01-t02
+status: core
+evaluated: true
+---
+
+Programar no consiste únicamente en construir aplicaciones informáticas. También permite organizar información, automatizar tareas y producir evidencia para tomar decisiones en diferentes profesiones.
+
+En esta lección no implementaremos todavía los cálculos completos. Primero aprenderemos a **formular correctamente el problema**.
+
+## Del contexto al problema programable
+
+Una situación amplia no siempre está lista para convertirse en programa.
+
+Situación amplia:
+
+> Mejorar la movilidad de una ciudad.
+
+Problema más concreto:
+
+> A partir de registros de llegada, determinar cuántos buses ingresaron a una parada durante una hora.
+
+La segunda formulación permite identificar datos, pasos y un resultado verificable.
+
+### Cuatro preguntas útiles
+
+1. ¿Quién necesita la solución?
+2. ¿Qué información está disponible?
+3. ¿Qué transformación o decisión se requiere?
+4. ¿Cómo reconoceremos que el resultado es correcto?
+
+## Modelo entrada–proceso–salida
+
+### Caso 1: nutrición
+
+**Necesidad:** informar el total de calorías de una comida.
+
+| Elemento | Descripción |
+|---|---|
+| Entrada | Alimentos, porciones y calorías por porción |
+| Proceso | Calcular el aporte de cada alimento y sumar |
+| Salida | Total de calorías |
+
+En esta unidad podemos representar el resultado esperado:
+
+```python
+print("Reporte nutricional")
+print("Resultado esperado: total de calorías de la comida")
+```
+
+Las operaciones y los datos se implementarán cuando estudiemos variables y tipos.
+
+### Caso 2: ingeniería eléctrica
+
+**Necesidad:** reportar si una medición de voltaje se encuentra dentro del rango esperado.
+
+| Elemento | Descripción |
+|---|---|
+| Entrada | Medición y límites permitidos |
+| Proceso | Comparar la medición con el rango |
+| Salida | Mensaje de estado |
+
+Todavía no utilizaremos condicionales. Por ahora identificamos qué comparación necesitaría una futura solución.
+
+### Caso 3: telecomunicaciones
+
+**Necesidad:** resumir el número de interrupciones registradas en una jornada.
+
+| Elemento | Descripción |
+|---|---|
+| Entrada | Registros de interrupciones |
+| Proceso | Contar registros válidos |
+| Salida | Cantidad de interrupciones |
+
+### Caso 4: logística
+
+**Necesidad:** mostrar el orden de preparación de un pedido.
+
+| Elemento | Descripción |
+|---|---|
+| Entrada | Artículos y prioridad del pedido |
+| Proceso | Organizar la secuencia de preparación |
+| Salida | Lista ordenada de pasos |
+
+En esta unidad sí podemos representar una secuencia fija:
+
+```python
+print("1. Verificar el pedido")
+print("2. Preparar los artículos")
+print("3. Confirmar el empaque")
+```
+
+### Caso 5: diseño
+
+**Necesidad:** documentar las etapas para exportar una pieza gráfica.
+
+| Elemento | Descripción |
+|---|---|
+| Entrada | Diseño terminado y formato requerido |
+| Proceso | Revisar dimensiones, color y formato |
+| Salida | Archivo exportado y confirmación |
+
+### Caso 6: ambiente
+
+**Necesidad:** producir un reporte sobre observaciones de calidad del agua.
+
+| Elemento | Descripción |
+|---|---|
+| Entrada | Mediciones tomadas en diferentes puntos |
+| Proceso | Organizar y resumir las mediciones |
+| Salida | Reporte de resultados |
+
+## Qué hace programable a un problema
+
+Un problema inicial es buen candidato para programación cuando:
+
+- sus entradas pueden describirse;
+- el resultado esperado es observable;
+- los pasos pueden ordenarse;
+- existe una forma de comprobar el resultado;
+- la tarea se repite o maneja suficiente información como para justificar automatizarla.
+
+No todos los problemas profesionales pueden resolverse solo con código. Algunas decisiones necesitan criterio humano, contexto ético, conocimiento especializado o información que un programa no posee.
+
+## Del problema al algoritmo
+
+Problema:
+
+> Presentar el estado de una muestra antes de enviarla al laboratorio.
+
+Una descomposición inicial podría ser:
+
+1. identificar la muestra;
+2. verificar que tenga una etiqueta;
+3. registrar el lugar de recolección;
+4. mostrar un resumen para revisión.
+
+En esta unidad podemos crear un prototipo de salida:
+
+```python
+print("Registro de muestra")
+print("Identificación: pendiente")
+print("Lugar de recolección: pendiente")
+print("Estado: listo para revisión")
+```
+
+El prototipo permite conversar sobre el resultado antes de implementar almacenamiento, validaciones o cálculos.
+
+## Actividad guiada
+
+Elige un problema relacionado con tu carrera y completa:
+
+| Pregunta | Respuesta |
+|---|---|
+| Persona usuaria | |
+| Necesidad concreta | |
+| Entradas | |
+| Proceso | |
+| Salida | |
+| Forma de comprobar el resultado | |
+
+Después escribe entre tres y cinco instrucciones `print()` que representen cómo se vería la salida final.
+
+## Errores frecuentes al formular problemas
+
+- **Problema demasiado amplio:** “mejorar una empresa”.
+- **Salida indefinida:** “analizar datos” sin indicar qué resultado se espera.
+- **Confundir herramienta con objetivo:** “usar Python” no describe una necesidad.
+- **Inventar datos inexistentes:** un programa no puede utilizar información que nadie recoge.
+- **Automatizar una decisión humana sin criterios explícitos:** el código necesita reglas observables.
+
+## Comprueba lo aprendido
+
+1. Convierte “mejorar la nutrición” en un problema más concreto.
+2. Identifica entrada, proceso y salida para un sistema de registro de asistencia.
+3. ¿Qué información faltaría para automatizar una decisión profesional de tu carrera?
+4. ¿Por qué un prototipo de salida puede ser útil antes de implementar cálculos?
+
+## Resumen
+
+- La programación puede apoyar muchas disciplinas.
+- Una necesidad amplia debe transformarse en un problema concreto.
+- El modelo entrada–proceso–salida ayuda a delimitar la solución.
+- Un resultado verificable permite evaluar si la solución funciona.
+- No toda decisión debe automatizarse.
+

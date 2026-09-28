@@ -1,0 +1,227 @@
+---
+title: "1.1 Introducción a Python"
+description: "Programas, algoritmos, código fuente y primeras instrucciones en Python."
+sidebar:
+  order: 1
+module: unit-01
+topic: u01-t01
+status: core
+evaluated: true
+---
+
+> **Alcance de evaluación.** Se evalúa la introducción a Python y la ejecución de instrucciones sencillas. Algoritmos, comentarios, entrada–proceso–salida y diagnóstico básico de errores son apoyos formativos, no contenidos adicionales evaluables por separado.
+
+## Antes de programar: entender el problema
+
+Una computadora ejecuta instrucciones con rapidez, pero no decide por sí sola qué problema queremos resolver. Esa responsabilidad corresponde a la persona que diseña la solución.
+
+Considera esta necesidad:
+
+> Informar a los estudiantes en qué aula se realizará una ayudantía.
+
+Antes de escribir código debemos responder:
+
+- ¿Qué información recibimos?
+- ¿Qué resultado necesitamos?
+- ¿Qué pasos conectan la información con el resultado?
+
+Ese razonamiento es más importante que memorizar instrucciones de un lenguaje.
+
+## Apoyo formativo: algoritmo, programa y código fuente
+
+Un **algoritmo** es una secuencia finita y ordenada de pasos para resolver un problema. Una receta, una ruta para llegar a un edificio o las instrucciones para registrar una muestra pueden verse como algoritmos si sus pasos son claros y terminan.
+
+Un **programa** es una implementación de uno o más algoritmos en un lenguaje que puede ejecutar una computadora.
+
+El **código fuente** es el texto escrito por quien programa. En esta materia escribiremos código fuente en Python.
+
+### Ejemplo cotidiano
+
+Problema: mostrar la información básica de una ayudantía.
+
+Algoritmo:
+
+1. Mostrar el nombre de la materia.
+2. Mostrar el lugar.
+3. Mostrar una recomendación.
+
+Programa:
+
+```python
+print("Fundamentos de Programación")
+print("Lugar: laboratorio asignado")
+print("Recomendación: llegar con el ejercicio leído")
+```
+
+Salida:
+
+```text
+Fundamentos de Programación
+Lugar: laboratorio asignado
+Recomendación: llegar con el ejercicio leído
+```
+
+El programa ejecuta las instrucciones de arriba hacia abajo. Cambiar su orden cambia el orden de la salida.
+
+## ¿Qué es Python?
+
+Python es un lenguaje de programación de propósito general. Se utiliza en automatización, análisis de datos, ciencia, educación, desarrollo web y muchas otras áreas.
+
+Durante el curso utilizaremos **Python 3**. No es necesario memorizar su historia ni comparar en profundidad lenguajes compilados e interpretados. Lo importante en esta unidad es reconocer que escribimos código fuente y un intérprete ejecuta esas instrucciones.
+
+## Nuestra primera instrucción: `print()`
+
+`print()` muestra información en la salida del programa.
+
+```python
+print("Hola, Fundamentos")
+```
+
+- `print` es el nombre de una operación disponible en Python.
+- Los paréntesis contienen la información que se mostrará.
+- Las comillas delimitan el texto.
+
+Salida:
+
+```text
+Hola, Fundamentos
+```
+
+En esta unidad usaremos `print()` para observar la ejecución. Más adelante aprenderemos a almacenar y transformar datos.
+
+## Apoyo formativo: comentarios
+
+Un comentario explica el código a las personas que lo leen. Python ignora el texto que aparece después de `#` en esa línea.
+
+```python
+# Identifica el curso
+print("Fundamentos de Programación")
+
+# Indica el propósito del programa
+print("Este programa presenta información de una ayudantía")
+```
+
+Un comentario útil explica una intención. Repetir exactamente la instrucción aporta poco:
+
+```python
+# Poco útil: imprime Hola
+print("Hola")
+```
+
+Una versión más informativa sería:
+
+```python
+# Mensaje inicial que confirma que el programa comenzó
+print("Hola")
+```
+
+## Apoyo formativo: entrada, proceso y salida
+
+Usaremos este modelo durante toda la materia:
+
+| Elemento | Pregunta | Ejemplo |
+|---|---|---|
+| Entrada | ¿Qué información necesita la solución? | Horario y aula |
+| Proceso | ¿Qué debe hacerse con esa información? | Organizar el mensaje |
+| Salida | ¿Qué resultado recibe la persona usuaria? | Aviso de la ayudantía |
+
+En los primeros programas la entrada puede estar escrita directamente en el código. Luego aprenderemos a capturarla y almacenarla.
+
+## Apoyo formativo: leer antes de ejecutar
+
+Antes de presionar **Ejecutar**, predice la salida:
+
+```python
+print("Inicio")
+print("Analizar el problema")
+print("Describir la solución")
+print("Fin")
+```
+
+Predicción:
+
+```text
+Inicio
+Analizar el problema
+Describir la solución
+Fin
+```
+
+La práctica de predecir te ayuda a comprobar si comprendes el flujo del programa.
+
+## Apoyo formativo: errores como información
+
+Un error no significa que “no sirves para programar”. Significa que existe una diferencia entre lo que Python esperaba y lo que recibió.
+
+Ejemplo con una comilla faltante:
+
+```python
+print("Hola)
+```
+
+Python no puede determinar dónde termina el texto. Para diagnosticar un problema:
+
+1. lee la última línea del mensaje de error;
+2. identifica la línea señalada;
+3. compara paréntesis y comillas;
+4. realiza un cambio pequeño;
+5. vuelve a ejecutar.
+
+No aprenderemos todavía a controlar errores con `try-except`; esa construcción está fuera del alcance de la materia.
+
+## Apoyo formativo: errores frecuentes
+
+### Olvidar las comillas
+
+```python
+print(Hola)
+```
+
+Si queremos mostrar texto literal, debe estar entre comillas.
+
+### No cerrar un paréntesis
+
+```python
+print("Hola"
+```
+
+Cada paréntesis abierto debe cerrarse.
+
+### Escribir `Print` en lugar de `print`
+
+```python
+Print("Hola")
+```
+
+Python distingue mayúsculas y minúsculas.
+
+### Copiar comillas tipográficas
+
+```text
+print(“Hola”)
+```
+
+Los editores de texto pueden producir comillas curvas. En código deben utilizarse comillas rectas: `"Hola"` o `'Hola'`.
+
+## Comprueba lo aprendido
+
+1. ¿Cuál es la diferencia entre algoritmo y programa?
+2. ¿Qué mostrará un programa con tres instrucciones `print()`?
+3. ¿Por qué conviene predecir la salida antes de ejecutar?
+4. ¿Qué información buscarías primero en un mensaje de error?
+5. Escribe un programa de cuatro líneas que muestre el inicio, dos pasos y el final de una actividad.
+
+## Resumen
+
+- Programar comienza con comprender un problema.
+- Un algoritmo describe pasos; un programa los expresa en código ejecutable.
+- Python ejecuta las instrucciones en un orden definido.
+- `print()` permite mostrar resultados.
+- `#` inicia un comentario.
+- Los mensajes de error aportan pistas concretas para corregir el código.
+
+## Recurso oficial
+
+- [Tutorial oficial de Python](https://docs.python.org/3/tutorial/)
+- [Introducción informal a Python](https://docs.python.org/es/3.12/tutorial/introduction.html)
+

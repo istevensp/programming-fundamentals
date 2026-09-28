@@ -1,0 +1,61 @@
+version: 1
+
+module:
+  id: unit-01
+  number: 1
+  slug: introduccion-python
+  title: Introducción a Python
+  status: core
+  evaluated: true
+  source:
+    sheet: Contenidos
+    range: A2:C4
+
+purpose: >-
+  Presentar Python como herramienta para resolver problemas y preparar al
+  estudiante para ejecutar sus primeros programas en los entornos autorizados.
+
+prerequisites: []
+
+learning_outcomes:
+  - Explicar el papel de Python en la resolución de problemas.
+  - Reconocer aplicaciones de la programación en diferentes carreras.
+  - Crear y ejecutar un programa básico en Spyder o Google Colab.
+  - Identificar entrada, proceso y salida en un ejemplo sencillo.
+
+core_topics:
+  - id: u01-t01
+    title: Introducción a Python
+    status: core
+    evaluated: true
+  - id: u01-t02
+    title: Programación aplicada a proyectos de diferentes carreras
+    status: core
+    evaluated: true
+  - id: u01-t03
+    title: Herramientas de programación
+    status: core
+    evaluated: true
+    concepts:
+      - Spyder
+      - Google Colab
+
+assessment_evidence:
+  - Ejecuta un programa corto en Spyder o Google Colab.
+  - Explica qué problema resuelve un ejemplo y cuáles son su entrada y salida.
+
+restrictions: []
+excluded_topics: []
+supplementary_topics: []
+
+pages:
+  index: content/docs/01-introduccion-python/index.mdx
+  lessons:
+    - content/docs/01-introduccion-python/01-introduccion-python.mdx
+    - content/docs/01-introduccion-python/02-programacion-aplicada.mdx
+    - content/docs/01-introduccion-python/03-spyder-colab.mdx
+  practice: content/docs/01-introduccion-python/04-practica.mdx
+  solutions: content/docs/01-introduccion-python/05-soluciones.mdx
+
+materials_catalog: content/materials/01-introduccion-python.yaml
+

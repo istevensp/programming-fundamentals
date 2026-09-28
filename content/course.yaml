@@ -1,0 +1,135 @@
+version: 1
+
+course:
+  id: fundamentos-programacion
+  code: CCPG1043
+  title: Fundamentos de Programación
+  period: 2026-II
+  language: es
+  programming_language: Python
+  audience: Estudiantes sin experiencia previa en programación
+
+authority:
+  owner: Coordinación de Fundamentos de Programación
+  source:
+    file: FP2026-II Ayudantes.xlsx
+    sheet: Contenidos
+    range: A1:C67
+  precedence: >-
+    Estas directrices prevalecen sobre repositorios de referencia, materiales de
+    otros docentes y ampliaciones generadas posteriormente.
+
+scope_policy:
+  allowed_statuses:
+    - core
+    - supplementary
+    - excluded
+    - prohibited
+    - discouraged
+  core:
+    publish: true
+    evaluated: true
+  supplementary:
+    publish: true
+    evaluated: false
+    label: No evaluable
+  excluded:
+    publish: false
+    evaluated: false
+  prohibited:
+    publish: false
+    evaluated: false
+  discouraged:
+    publish: true
+    evaluated: false
+    label: Práctica que debe evitarse
+  coordination_note: >-
+    Los ayudantes deben limitar sus clases a estos contenidos. Cualquier recurso
+    fuera del alcance deberá justificarse de forma explícita y no podrá presentarse
+    como contenido evaluable de la materia.
+
+learning_goal: >-
+  Resolver problemas básicos mediante programas en Python que utilicen datos
+  simples, funciones, estructuras de control, diccionarios de un nivel y
+  procesamiento elemental de datos tabulares con Pandas.
+
+prerequisites:
+  - No se requiere experiencia previa en programación.
+  - Manejo básico de una computadora y un navegador web.
+
+global_constraints:
+  data_structures:
+    lists:
+      max_nesting_depth: 1
+    dictionaries:
+      max_nesting_depth: 1
+      simple_list_as_value_allowed: true
+  functions:
+    external_global_variables_allowed: false
+  control_flow:
+    prohibited_constructs:
+      - break
+      - continue
+      - pass
+    exceptions_allowed: false
+    boolean_flags_for_while_control: discouraged
+  pedagogy:
+    examples_must_respect_scope: true
+    exercises_must_use_prior_content_only: true
+    prohibited_constructs_in_model_solutions: false
+
+content_model:
+  module_directory: content/modules
+  module_file_pattern: "{number}-{slug}.yaml"
+  required_module_sections:
+    - learning_outcomes
+    - core_topics
+    - assessment_evidence
+    - restrictions
+    - excluded_topics
+    - supplementary_topics
+
+modules:
+  - id: unit-01
+    number: 1
+    title: Introducción a Python
+    slug: introduccion-python
+    content_status: complete
+    file: content/modules/01-introduccion-python.yaml
+    source_range: A2:C4
+  - id: unit-02
+    number: 2
+    title: Variables, tipos y colecciones simples
+    slug: variables-tipos-colecciones
+    content_status: complete
+    file: content/modules/02-variables-tipos-colecciones.yaml
+    source_range: A5:C11
+  - id: unit-03
+    number: 3
+    title: Funciones
+    slug: funciones
+    content_status: complete
+    file: content/modules/03-funciones.yaml
+    source_range: A12:C21
+  - id: unit-04
+    number: 4
+    title: Estructuras de control
+    slug: estructuras-control
+    content_status: complete
+    file: content/modules/04-estructuras-control.yaml
+    source_range: A22:C36
+  - id: unit-05
+    number: 5
+    title: Diccionarios
+    slug: diccionarios
+    content_status: complete
+    file: content/modules/05-diccionarios.yaml
+    source_range: A37:C42
+  - id: unit-06
+    number: 6
+    title: Procesamiento de datos con Pandas
+    slug: pandas
+    content_status: complete
+    file: content/modules/06-pandas.yaml
+    source_range: A43:C67
+

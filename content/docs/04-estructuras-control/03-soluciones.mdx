@@ -1,0 +1,151 @@
+---
+title: "Soluciones — Unidad 04"
+module: unit-04
+lesson: u04-solutions
+status: core
+evaluated: false
+visibility: instructor-or-after-attempt
+---
+
+## 1. Tarifa por edad
+
+```python
+edad = 15
+
+if edad < 12:
+    tarifa = "infantil"
+elif edad < 18:
+    tarifa = "juvenil"
+else:
+    tarifa = "adulto"
+
+print(tarifa)
+```
+
+## 2. Tabla de multiplicar
+
+```python
+numero = 7
+
+for factor in range(1, 11):
+    print(numero, "x", factor, "=", numero * factor)
+```
+
+## 3. Índices y valores
+
+```python
+temperaturas = [29.5, 30.1, 28.8]
+
+for posicion, temperatura in enumerate(temperaturas):
+    print(posicion, temperatura)
+```
+
+## 4. Conteo anidado
+
+```python
+grupos = ["A", "B"]
+
+for grupo in grupos:
+    for semana in range(1, 4):
+        print(grupo, semana)
+```
+
+## 5. Máximo sin empate
+
+```python
+ventas = [85, 120, 90, 110, 75]
+maximo = max(ventas)
+posicion = ventas.index(maximo)
+print(maximo, posicion)
+```
+
+## 6. Máximo con empates
+
+```python
+ventas = [85, 120, 90, 120, 75]
+maximo = max(ventas)
+posiciones = []
+
+for posicion, venta in enumerate(ventas):
+    if venta == maximo:
+        posiciones.append(posicion)
+
+print(maximo, posiciones)
+```
+
+## 7. Mínimo sin empate
+
+```python
+tiempos = [42, 38, 45, 40]
+minimo = min(tiempos)
+posicion = tiempos.index(minimo)
+print(minimo, posicion)
+```
+
+## 8. Mínimo con empates
+
+```python
+tiempos = [42, 38, 45, 38]
+minimo = min(tiempos)
+posiciones = []
+
+for posicion, tiempo in enumerate(tiempos):
+    if tiempo == minimo:
+        posiciones.append(posicion)
+
+print(minimo, posiciones)
+```
+
+## 9. Sin repetidos
+
+```python
+datos = [3, 1, 3, 2, 1, 4]
+unicos = []
+
+for dato in datos:
+    if dato not in unicos:
+        unicos.append(dato)
+
+print(unicos)
+```
+
+## 10. Comprensión explicada
+
+```python
+dobles = []
+
+for numero in range(1, 10):
+    if numero % 2 != 0:
+        dobles.append(numero * 2)
+
+dobles_comprension = [numero * 2 for numero in range(1, 10) if numero % 2 != 0]
+print(dobles, dobles_comprension)
+```
+
+La comprensión recorre los enteros del 1 al 9, selecciona los impares y guarda el doble de cada uno.
+
+## 11. Ahorro
+
+```python
+saldo = 0
+meta = 90
+
+while saldo < meta:
+    saldo = saldo + 15
+    print(saldo)
+```
+
+## 12. Condición booleana
+
+```python
+def puede_registrar(cupos, inscritos):
+    return inscritos < cupos
+
+
+cupos = 4
+inscritos = 0
+
+while puede_registrar(cupos, inscritos):
+    inscritos = inscritos + 1
+    print("Registro", inscritos)
+```

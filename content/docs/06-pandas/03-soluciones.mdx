@@ -1,0 +1,108 @@
+---
+title: "Soluciones — Unidad 06"
+module: unit-06
+lesson: u06-solutions
+status: core
+evaluated: false
+visibility: instructor-or-after-attempt
+---
+
+## 1–4. Creación
+
+```python
+import numpy as np
+import pandas as pd
+
+notas = pd.Series([8.2, 6.5, 9.0], index=["E01", "E02", "E03"])
+
+datos = {
+    "nombre": ["Ana", "Luis", "Marta"],
+    "carrera": ["Computación", "Mecánica", "Computación"],
+    "semestre": [1, 2, 1]
+}
+tabla = pd.DataFrame(datos)
+
+tabla_desde_lista = pd.DataFrame([8.2, 6.5, 9.0], columns=["nota"])
+
+arreglo_notas = np.array([8.2, 6.5, 9.0])
+tabla_desde_arreglo = pd.DataFrame(arreglo_notas, columns=["nota"])
+```
+
+## 5–7. Lectura y selección
+
+```python
+estudiantes = pd.read_csv(
+    "files/06-pandas/estudiantes.csv",
+    sep=",",
+    header=0,
+    index_col="codigo"
+)
+
+estudiantes.info()
+print(estudiantes.head(3))
+print(estudiantes.tail(2))
+print(estudiantes.loc["E03"])
+print(estudiantes.iloc[2])
+print(estudiantes[["nombre", "nota"]])
+estudiantes["nota_porcentual"] = estudiantes["nota"] * 10
+```
+
+Coinciden porque `E03` es la etiqueta de la tercera fila, cuya posición entera es `2`.
+
+## 8. Resúmenes y extremos
+
+```python
+print(estudiantes["nota"].mean())
+print(estudiantes["nota"].sum())
+print(estudiantes["nota"].min())
+print(estudiantes["nota"].max())
+print(estudiantes["nota"].idxmin())
+print(estudiantes["nota"].idxmax())
+```
+
+## 9–10. Filtros
+
+```python
+seleccion = estudiantes[
+    (estudiantes["nota"] >= 6) &
+    (estudiantes["asistencia"] >= 0.80)
+]
+
+carreras = estudiantes[
+    estudiantes["carrera"].isin(["Computación", "Mecánica"])
+]
+```
+
+## 11. Reemplazo condicional
+
+```python
+estudiantes["estado"] = "Aprobado"
+estudiantes["estado"] = estudiantes["estado"].mask(
+    estudiantes["nota"] < 6,
+    "Reprobado"
+)
+```
+
+## 12. Ordenamiento
+
+```python
+ordenados = estudiantes.sort_values(
+    ["carrera", "nota"],
+    ascending=[True, False]
+)
+
+estudiantes.sort_values("nombre", inplace=True)
+```
+
+## 13–15. Valores, grupos y exportación
+
+```python
+print(estudiantes["carrera"].unique())
+print(estudiantes["carrera"].value_counts())
+
+resumen = estudiantes.groupby("carrera")[["nota", "asistencia"]].mean()
+print(resumen)
+print("Mayor promedio:", resumen["nota"].idxmax())
+
+estudiantes.to_csv("estudiantes_procesados.csv", index=True)
+```

@@ -1,0 +1,14 @@
+version: 1
+module: unit-02
+title: Variables, tipos y colecciones simples
+status: complete
+source: {file: FP2026-II Ayudantes.xlsx, sheet: Contenidos, range: A5:C11}
+items:
+  - {id: u02-index, title: Ruta de la unidad, type: mdx, role: index, status: core, evaluated: true, path: content/docs/02-variables-tipos-colecciones/index.mdx}
+  - {id: u02-content, title: Datos, strings, listas y aleatoriedad, type: mdx, role: lesson, status: core, evaluated: true, path: content/docs/02-variables-tipos-colecciones/01-contenido.mdx}
+  - {id: u02-practice, title: Práctica de la Unidad 02, type: mdx, role: practice, status: core, evaluated: true, path: content/docs/02-variables-tipos-colecciones/02-practica.mdx}
+  - {id: u02-solutions, title: Soluciones de la Unidad 02, type: mdx, role: solutions, status: core, evaluated: false, visibility: instructor-or-after-attempt, path: content/docs/02-variables-tipos-colecciones/03-soluciones.mdx}
+  - {id: u02-code, title: Resumen ejecutable de la Unidad 02, type: python, role: example, status: core, evaluated: false, path: code/02-variables-tipos-colecciones/resumen_unidad.py}
+references:
+  - {title: Tutorial de Python, url: https://docs.python.org/3/tutorial/introduction.html}
+  - {title: Módulo random, url: https://docs.python.org/3/library/random.html}

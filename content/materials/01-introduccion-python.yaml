@@ -1,0 +1,87 @@
+version: 1
+
+module: unit-01
+title: Introducción a Python
+status: complete
+source:
+  file: FP2026-II Ayudantes.xlsx
+  sheet: Contenidos
+  range: A2:C4
+
+items:
+  - id: u01-index
+    title: Ruta de la unidad
+    type: mdx
+    role: index
+    status: core
+    evaluated: true
+    path: content/docs/01-introduccion-python/index.mdx
+  - id: u01-l01
+    title: Introducción a Python
+    type: mdx
+    role: lesson
+    status: core
+    evaluated: true
+    topic: u01-t01
+    path: content/docs/01-introduccion-python/01-introduccion-python.mdx
+  - id: u01-l02
+    title: Programación aplicada a distintas carreras
+    type: mdx
+    role: lesson
+    status: core
+    evaluated: true
+    topic: u01-t02
+    path: content/docs/01-introduccion-python/02-programacion-aplicada.mdx
+  - id: u01-l03
+    title: Primeros pasos con Spyder y Google Colab
+    type: mdx
+    role: lesson
+    status: core
+    evaluated: true
+    topic: u01-t03
+    path: content/docs/01-introduccion-python/03-spyder-colab.mdx
+  - id: u01-practice
+    title: Práctica de la Unidad 01
+    type: mdx
+    role: practice
+    status: core
+    evaluated: true
+    path: content/docs/01-introduccion-python/04-practica.mdx
+  - id: u01-solutions
+    title: Soluciones de la Unidad 01
+    type: mdx
+    role: solutions
+    status: core
+    evaluated: false
+    visibility: instructor-or-after-attempt
+    path: content/docs/01-introduccion-python/05-soluciones.mdx
+  - id: u01-code-01
+    title: Hola, Fundamentos
+    type: python
+    role: example
+    status: core
+    evaluated: false
+    path: code/01-introduccion-python/01_hola_fundamentos.py
+  - id: u01-code-02
+    title: Ejecución secuencial
+    type: python
+    role: example
+    status: core
+    evaluated: false
+    path: code/01-introduccion-python/02_ejecucion_secuencial.py
+  - id: u01-code-03
+    title: Aplicaciones por carrera
+    type: python
+    role: example
+    status: core
+    evaluated: false
+    path: code/01-introduccion-python/03_aplicaciones_por_carrera.py
+
+references:
+  - title: Tutorial oficial de Python
+    url: https://docs.python.org/3/tutorial/
+  - title: Editor de Spyder
+    url: https://docs.spyder-ide.org/current/panes/editor.html
+  - title: Preguntas frecuentes de Google Colab
+    url: https://research.google.com/colaboratory/intl/es/faq.html
+

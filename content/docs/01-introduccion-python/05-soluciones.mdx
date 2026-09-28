@@ -1,0 +1,113 @@
+---
+title: "1.5 Soluciones — Introducción a Python"
+description: "Soluciones razonadas para la práctica de la Unidad 01."
+sidebar:
+  order: 5
+module: unit-01
+status: core
+evaluated: false
+visibility: instructor-or-after-attempt
+---
+
+Consulta estas soluciones después de realizar un intento propio. En los ejercicios abiertos pueden existir varias respuestas correctas.
+
+## Solución 1 — Predicción de salida
+
+```text
+Inicio
+Observar
+Describir
+Fin
+```
+
+Cada llamada a `print()` produce una línea y las instrucciones se ejecutan de arriba hacia abajo.
+
+## Solución 2 — Orden incorrecto
+
+```python
+print("1. Comprender el problema")
+print("2. Describir los pasos")
+print("3. Presentar el resultado")
+```
+
+No fue necesario crear instrucciones nuevas; solo ordenar el algoritmo.
+
+## Solución 3 — Corrige los errores
+
+```python
+print("Fundamentos de Programación")
+print("Unidad 01")
+print("Entorno preparado")
+```
+
+Correcciones:
+
+- `Print` cambió a `print`: esto no es un error de sintaxis (el código original sí es válido), sino que produciría `NameError` al ejecutarlo, porque Python distingue mayúsculas y minúsculas y no existe ninguna función llamada `Print`.
+- Se agregó la comilla de cierre en `"Unidad 01"` — esto sí es un error de sintaxis (comilla sin cerrar).
+- Se agregaron comillas alrededor de `"Entorno preparado"` porque es texto literal — este también es un error de sintaxis.
+
+## Solución 4 — Entrada, proceso y salida
+
+Una respuesta posible:
+
+- **Persona usuaria:** personal de la biblioteca.
+- **Entrada:** registros de préstamos realizados durante la jornada.
+- **Proceso:** identificar los registros válidos y contarlos.
+- **Salida:** número total de libros prestados.
+- **Comprobación:** comparar el resultado con el número de registros válidos del día.
+
+No corresponde implementar el conteo todavía porque las colecciones y la iteración se estudiarán después.
+
+## Solución 5 — Aplicación profesional
+
+Ejemplo para gestión ambiental:
+
+- **Necesidad:** presentar el estado de un punto de muestreo.
+- **Entradas:** identificación del punto, lugar y observación registrada.
+- **Proceso:** organizar la información para revisión.
+- **Salida:** ficha resumida del punto.
+- **Verificación:** comparar la ficha con el registro de campo.
+
+Prototipo:
+
+```python
+# Encabezado que identifica el propósito del reporte
+print("Ficha de punto de muestreo")
+
+# Campos que deberá completar una versión posterior
+print("Identificación: pendiente")
+print("Lugar: pendiente")
+print("Estado: listo para revisión")
+```
+
+## Solución 6 — Mismo programa, dos entornos
+
+El contenido del programa es igual en ambos entornos. La diferencia observable es:
+
+- Spyder muestra la salida en la consola de IPython al ejecutar el archivo.
+- Colab muestra la salida debajo de la celda ejecutada.
+
+Después de modificar un mensaje, es necesario guardar y ejecutar nuevamente en Spyder o volver a ejecutar la celda en Colab.
+
+## Solución 7 — Comentarios útiles
+
+```python
+# Encabezado que identifica el tipo de información mostrada
+print("Reporte de observación")
+
+# Confirma que el registro puede pasar a revisión
+print("Estado: listo para revisión")
+```
+
+Los comentarios explican el propósito de cada mensaje.
+
+## Autoevaluación
+
+Antes de cerrar la unidad, comprueba que puedas responder sin consultar:
+
+1. ¿Qué diferencia existe entre algoritmo y programa?
+2. ¿Cómo identificas entrada, proceso y salida?
+3. ¿Dónde aparece la salida en Spyder y en Colab?
+4. ¿Qué revisarías si Python señala un error de sintaxis?
+5. ¿Por qué no adelantamos variables o condicionales en esta unidad?
+

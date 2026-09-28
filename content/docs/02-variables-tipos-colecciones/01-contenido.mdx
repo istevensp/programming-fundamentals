@@ -1,0 +1,150 @@
+---
+title: "2.1 Datos, strings, listas y aleatoriedad"
+description: "Contenido completo de la Unidad 02."
+sidebar: { order: 1 }
+module: unit-02
+status: core
+evaluated: true
+---
+
+## Variables y tipos
+
+Una variable asocia un nombre con un valor:
+
+```python
+nombre = "Ana"
+edad = 18
+promedio = 8.75
+matriculado = True
+```
+
+Usa nombres descriptivos en `snake_case`. Python distingue mayúsculas y minúsculas: `edad` y `Edad` son nombres diferentes.
+
+`type()` permite observar el tipo:
+
+```python
+print(type(nombre))      # str
+print(type(edad))        # int
+print(type(promedio))    # float
+print(type(matriculado)) # bool
+```
+
+## Conversión de tipos
+
+Convertir no cambia mágicamente el dato original; produce un valor del tipo solicitado.
+
+```python
+texto_edad = "18"
+edad = int(texto_edad)
+altura = float("1.72")
+codigo = str(2026)
+```
+
+Antes de convertir, pregunta qué representa el dato. Un código como `"0015"` suele mantenerse como string para no perder los ceros iniciales.
+
+## Strings
+
+Los strings son inmutables: sus métodos producen un nuevo string.
+
+```python
+registro = "  Guayaquil, ECUADOR  "
+limpio = registro.strip()
+minusculas = limpio.lower()
+corregido = minusculas.replace("ecuador", "Ecuador")
+sin_prefijo = corregido.replace("Guayaquil, ", "")
+
+print(sin_prefijo)
+```
+
+Operaciones frecuentes:
+
+| Operación | Resultado |
+|---|---|
+| `texto.strip()` | elimina espacios de los extremos |
+| `texto.lower()` | convierte a minúsculas |
+| `texto.upper()` | convierte a mayúsculas |
+| `texto.replace(a, b)` | reemplaza apariciones |
+| `texto.replace(a, "")` | elimina el fragmento indicado |
+| `texto.find(x)` | posición inicial o `-1` |
+| `x in texto` | indica si aparece el fragmento |
+
+## Listas de un nivel
+
+Una lista mantiene varios valores en orden:
+
+```python
+temperaturas = [28.5, 29.0, 28.5, 30.2]
+print(temperaturas[0])
+print(temperaturas[-1])
+print(len(temperaturas))
+```
+
+Los índices comienzan en cero. Un índice inexistente produce un error.
+
+```python
+temperaturas.append(29.7)
+temperaturas.remove(28.5)  # elimina la primera coincidencia
+```
+
+### Búsqueda y repetidos
+
+```python
+codigos = ["A1", "B2", "A1", "C3"]
+print("A1" in codigos)       # True
+print(codigos.index("A1"))   # primera posición
+print(codigos.count("A1"))   # número de apariciones
+```
+
+`index()` devuelve solo la primera posición. Si el problema necesita todas las posiciones, no basta con esa operación; la estrategia completa se estudiará con ciclos.
+
+## Aleatoriedad
+
+```python
+import random
+
+print(random.randint(1, 6))
+print(random.choice(["rojo", "verde", "azul"]))
+print(random.choices(["A", "B", "C"], k=4))
+print(random.sample(["A", "B", "C", "D"], k=2))
+
+orden = [1, 2, 3, 4]
+random.shuffle(orden)
+print(orden)
+```
+
+- `randint(a, b)` incluye ambos extremos.
+- `choice` selecciona un elemento.
+- `choices` selecciona varios y puede repetir.
+- `sample` selecciona sin reemplazo. Si la población contiene valores iguales, el resultado también puede contener valores iguales.
+- `shuffle` modifica el orden de la lista original.
+
+## Formato de salida
+
+```python
+producto = "Cuaderno"
+precio = 2.5
+print(f"Producto: {producto} | Precio: ${precio:.2f}")
+print("Producto: {} | Precio: ${:.2f}".format(producto, precio))
+```
+
+Ambas alternativas son válidas. Mantén un estilo consistente dentro del ejercicio.
+
+## Errores frecuentes
+
+- Sumar `"10" + "5"` produce `"105"`, no `15`.
+- Usar un índice mayor que el último disponible.
+- Suponer que `index()` encuentra todas las repeticiones.
+- Pedir una muestra mayor que la población con `sample()`.
+- Esperar que `shuffle()` devuelva una lista nueva; modifica la existente.
+
+## Comprobación
+
+1. ¿Por qué un código de identificación puede ser string aunque contenga dígitos?
+2. ¿Qué diferencia existe entre `choice`, `choices` y `sample`?
+3. ¿Qué informa `count()` que no informa `index()`?
+4. ¿Por qué conviene usar `.2f` al mostrar dinero?
+
+## Recursos oficiales
+
+- [Introducción informal a Python](https://docs.python.org/3/tutorial/introduction.html)
+- [Documentación de `random`](https://docs.python.org/3/library/random.html)

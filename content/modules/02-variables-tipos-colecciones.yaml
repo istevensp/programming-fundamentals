@@ -1,0 +1,102 @@
+version: 1
+
+module:
+  id: unit-02
+  number: 2
+  slug: variables-tipos-colecciones
+  title: Variables, tipos y colecciones simples
+  status: core
+  evaluated: true
+  source:
+    sheet: Contenidos
+    range: A5:C11
+
+purpose: >-
+  Representar, transformar, consultar y presentar datos simples mediante las
+  herramientas básicas de Python.
+
+prerequisites:
+  - unit-01
+
+learning_outcomes:
+  - Definir variables con nombres comprensibles.
+  - Convertir valores entre tipos cuando una operación lo requiera.
+  - Aplicar transformaciones básicas sobre strings.
+  - Crear y consultar listas de un nivel.
+  - Resolver búsquedas considerando la presencia de valores repetidos.
+  - Elegir una operación aleatoria adecuada para selección o reordenamiento.
+  - Presentar resultados con formato legible.
+
+core_topics:
+  - id: u02-t01
+    title: Definición de variables
+    status: core
+    evaluated: true
+  - id: u02-t02
+    title: Conversión de tipos de datos
+    status: core
+    evaluated: true
+  - id: u02-t03
+    title: Manipulación de strings
+    status: core
+    evaluated: true
+    concepts:
+      - eliminación
+      - reemplazo
+      - conversión a mayúsculas
+      - conversión a minúsculas
+  - id: u02-t04
+    title: Listas de un nivel
+    status: core
+    evaluated: true
+  - id: u02-t05
+    title: Búsqueda de elementos en listas
+    status: core
+    evaluated: true
+    emphasis:
+      - tratamiento de valores repetidos
+  - id: u02-t06
+    title: Valores aleatorios
+    status: core
+    evaluated: true
+    concepts:
+      - randint
+      - choice
+      - choices
+      - sample
+      - shuffle
+  - id: u02-t07
+    title: Formato de salida
+    status: core
+    evaluated: true
+    alternatives:
+      - f-strings
+      - str.format
+
+assessment_evidence:
+  - Construye un programa que defina, convierta y presente datos.
+  - Manipula un string mediante al menos dos transformaciones.
+  - Busca un valor en una lista y explica qué ocurre si aparece varias veces.
+  - Distingue selección con reemplazo, selección sin reemplazo y reordenamiento.
+
+restrictions:
+  - id: u02-r01
+    status: prohibited
+    rule: No utilizar listas anidadas.
+
+excluded_topics:
+  - id: u02-x01
+    title: Listas de más de un nivel
+    status: excluded
+    evaluated: false
+    publish: false
+
+supplementary_topics: []
+
+pages:
+  index: content/docs/02-variables-tipos-colecciones/index.mdx
+  content: content/docs/02-variables-tipos-colecciones/01-contenido.mdx
+  practice: content/docs/02-variables-tipos-colecciones/02-practica.mdx
+  solutions: content/docs/02-variables-tipos-colecciones/03-soluciones.mdx
+materials_catalog: content/materials/02-variables-tipos-colecciones.yaml
+

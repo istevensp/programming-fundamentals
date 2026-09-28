@@ -1,0 +1,33 @@
+---
+title: "Visualización básica — No evaluable"
+module: unit-06
+lesson: u06-visualization
+status: supplementary
+evaluated: false
+label: "No evaluable"
+---
+
+> **Contenido suplementario — no evaluable.** Coordinación excluyó este bloque de la evaluación. Se conserva únicamente como ampliación opcional y debe presentarse después del contenido obligatorio.
+
+Pandas integra métodos de visualización que utilizan Matplotlib.
+
+```python
+import matplotlib.pyplot as plt
+
+estudiantes["nota"].plot(kind="hist", title="Distribución de notas")
+plt.show()
+```
+
+Ejemplos opcionales:
+
+```python
+estudiantes.groupby("carrera")["nota"].mean().plot(kind="bar")
+estudiantes.sort_values("nota", ascending=False).head(5).plot(
+    x="nombre",
+    y="nota",
+    kind="bar"
+)
+estudiantes["nota"].plot(kind="box")
+```
+
+La elección del gráfico depende de la pregunta: barras para comparar categorías, histograma para observar distribución y boxplot para resumir dispersión y posibles valores extremos.

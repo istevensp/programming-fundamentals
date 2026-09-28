@@ -1,0 +1,167 @@
+---
+title: "Diccionarios de un nivel"
+module: unit-05
+lesson: u05-content
+status: core
+evaluated: true
+---
+
+## 1. Crear, consultar y modificar
+
+Un diccionario se escribe entre llaves. Cada par tiene la forma `clave: valor`.
+
+```python
+estudiante = {
+    "nombre": "Ana",
+    "nota": 8.7,
+    "aprobado": True
+}
+
+print(estudiante["nombre"])
+estudiante["nota"] = 9.1
+estudiante["paralelo"] = "A"
+```
+
+Las claves no se repiten. Asignar otro valor a una clave existente reemplaza el anterior. `get` permite consultar sin asumir que la clave existe:
+
+```python
+ciudad = estudiante.get("ciudad", "No registrada")
+```
+
+Para saber si existe una clave:
+
+```python
+if "nota" in estudiante:
+    print(estudiante["nota"])
+```
+
+## 2. Recorrer pares clave-valor
+
+`items()` entrega cada clave junto con su valor.
+
+```python
+precios = {"cuaderno": 2.5, "lápiz": 0.5, "regla": 1.25}
+
+for producto, precio in precios.items():
+    print(producto, precio)
+```
+
+También existen `keys()` y `values()`, pero al recorrer directamente un diccionario se obtienen sus claves.
+
+## 3. Conteo de frecuencias
+
+El diccionario puede acumular cuántas veces aparece cada elemento.
+
+```python
+palabras = ["datos", "python", "datos", "código", "python", "datos"]
+frecuencias = {}
+
+for palabra in palabras:
+    frecuencias[palabra] = frecuencias.get(palabra, 0) + 1
+
+print(frecuencias)
+```
+
+En cada repetición, `get(palabra, 0)` recupera el conteo existente o empieza en cero.
+
+## 4. Crear desde listas
+
+Dos listas alineadas pueden convertirse en un diccionario mediante sus posiciones.
+
+```python
+codigos = ["MAT", "FIS", "PRO"]
+creditos = [4, 4, 5]
+materias = {}
+
+for posicion, codigo in enumerate(codigos):
+    materias[codigo] = creditos[posicion]
+```
+
+Antes de hacerlo, verifique que ambas listas tengan la misma longitud y que las futuras claves no se repitan. Si una clave aparece de nuevo, su valor anterior será reemplazado.
+
+## 5. Crear desde una cadena
+
+Cuando una cadena tiene un formato conocido, primero se separan sus registros y después sus campos.
+
+```python
+texto = "agua=1.00;pan=0.60;fruta=0.80"
+precios = {}
+
+for registro in texto.split(";"):
+    producto, precio = registro.split("=")
+    precios[producto] = float(precio)
+```
+
+Este ejemplo supone que todos los registros respetan exactamente el formato `nombre=precio`.
+
+## 6. Derivar y filtrar otro diccionario
+
+Un nuevo diccionario puede construirse a partir de los pares de otro.
+
+```python
+precios = {"cuaderno": 2.5, "lápiz": 0.5, "regla": 1.25}
+precios_con_iva = {}
+
+for producto, precio in precios.items():
+    precios_con_iva[producto] = round(precio * 1.15, 2)
+```
+
+Para filtrar, se agrega el par únicamente cuando cumple la condición.
+
+```python
+economicos = {}
+
+for producto, precio in precios.items():
+    if precio <= 1.50:
+        economicos[producto] = precio
+```
+
+## 7. Una lista simple como valor
+
+El alcance permite, como máximo, una lista simple como valor. Por ejemplo, materias por paralelo:
+
+```python
+materias_por_paralelo = {
+    "A": ["Fundamentos", "Cálculo"],
+    "B": ["Fundamentos", "Física"]
+}
+```
+
+Las listas contienen valores simples, no otros diccionarios ni más listas.
+
+## 8. Invertir claves y valores
+
+Invertir significa convertir los valores en claves.
+
+```python
+codigos = {"Fundamentos": "CCPG1043", "Cálculo": "MATG1001"}
+por_codigo = {}
+
+for materia, codigo in codigos.items():
+    por_codigo[codigo] = materia
+```
+
+La inversión directa es segura únicamente si los valores originales son únicos y pueden emplearse como claves. Si se repiten, ocurre una colisión:
+
+```python
+paralelos = {"Ana": "A", "Luis": "B", "Marta": "A"}
+```
+
+Aquí el valor `"A"` corresponde a dos estudiantes. Una inversión directa conservaría solo el último. Si se requiere preservar todo, agrupe en listas simples:
+
+```python
+estudiantes_por_paralelo = {}
+
+for estudiante, paralelo in paralelos.items():
+    if paralelo not in estudiantes_por_paralelo:
+        estudiantes_por_paralelo[paralelo] = []
+    estudiantes_por_paralelo[paralelo].append(estudiante)
+```
+
+## Lista de control
+
+- ¿Cada clave representa un identificador único?
+- ¿El diccionario tiene un solo nivel?
+- ¿Las listas usadas como valores son simples?
+- ¿El formato de entrada desde una cadena está definido?
+- ¿Revisé valores repetidos antes de invertir?

@@ -1,0 +1,13 @@
+version: 1
+module: unit-06
+title: Procesamiento de datos con Pandas
+status: complete
+source: {file: FP2026-II Ayudantes.xlsx, sheet: Contenidos, range: A43:C67}
+items:
+  - {id: u06-index, title: Ruta de la unidad, type: mdx, role: index, status: core, evaluated: true, path: content/docs/06-pandas/index.mdx}
+  - {id: u06-content, title: Series y DataFrame, type: mdx, role: lesson, status: core, evaluated: true, path: content/docs/06-pandas/01-contenido.mdx}
+  - {id: u06-practice, title: Práctica de la Unidad 06, type: mdx, role: practice, status: core, evaluated: true, path: content/docs/06-pandas/02-practica.mdx}
+  - {id: u06-solutions, title: Soluciones de la Unidad 06, type: mdx, role: solutions, status: core, evaluated: false, visibility: instructor-or-after-attempt, path: content/docs/06-pandas/03-soluciones.mdx}
+  - {id: u06-visualization, title: Visualización básica, type: mdx, role: supplementary, status: supplementary, evaluated: false, label: No evaluable, path: content/docs/06-pandas/04-visualizacion-no-evaluable.mdx}
+  - {id: u06-code, title: Resumen ejecutable de la Unidad 06, type: python, role: example, status: core, evaluated: false, path: code/06-pandas/resumen_unidad.py}
+  - {id: u06-dataset, title: Datos de estudiantes, type: csv, role: dataset, status: core, evaluated: false, path: files/06-pandas/estudiantes.csv}

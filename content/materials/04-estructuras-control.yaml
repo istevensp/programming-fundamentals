@@ -1,0 +1,11 @@
+version: 1
+module: unit-04
+title: Estructuras de control
+status: complete
+source: {file: FP2026-II Ayudantes.xlsx, sheet: Contenidos, range: A22:C36}
+items:
+  - {id: u04-index, title: Ruta de la unidad, type: mdx, role: index, status: core, evaluated: true, path: content/docs/04-estructuras-control/index.mdx}
+  - {id: u04-content, title: Decisiones y repeticiones, type: mdx, role: lesson, status: core, evaluated: true, path: content/docs/04-estructuras-control/01-contenido.mdx}
+  - {id: u04-practice, title: Práctica de la Unidad 04, type: mdx, role: practice, status: core, evaluated: true, path: content/docs/04-estructuras-control/02-practica.mdx}
+  - {id: u04-solutions, title: Soluciones de la Unidad 04, type: mdx, role: solutions, status: core, evaluated: false, visibility: instructor-or-after-attempt, path: content/docs/04-estructuras-control/03-soluciones.mdx}
+  - {id: u04-code, title: Resumen ejecutable de la Unidad 04, type: python, role: example, status: core, evaluated: false, path: code/04-estructuras-control/resumen_unidad.py}

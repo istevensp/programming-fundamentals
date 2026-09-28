@@ -1,0 +1,11 @@
+version: 1
+module: unit-03
+title: Funciones
+status: complete
+source: {file: FP2026-II Ayudantes.xlsx, sheet: Contenidos, range: A12:C21}
+items:
+  - {id: u03-index, title: Ruta de la unidad, type: mdx, role: index, status: core, evaluated: true, path: content/docs/03-funciones/index.mdx}
+  - {id: u03-content, title: Funciones, parámetros y retornos, type: mdx, role: lesson, status: core, evaluated: true, path: content/docs/03-funciones/01-contenido.mdx}
+  - {id: u03-practice, title: Práctica de la Unidad 03, type: mdx, role: practice, status: core, evaluated: true, path: content/docs/03-funciones/02-practica.mdx}
+  - {id: u03-solutions, title: Soluciones de la Unidad 03, type: mdx, role: solutions, status: core, evaluated: false, visibility: instructor-or-after-attempt, path: content/docs/03-funciones/03-soluciones.mdx}
+  - {id: u03-code, title: Resumen ejecutable de la Unidad 03, type: python, role: example, status: core, evaluated: false, path: code/03-funciones/resumen_unidad.py}

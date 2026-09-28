@@ -1,0 +1,35 @@
+---
+title: "Práctica — Unidad 06"
+module: unit-06
+lesson: u06-practice
+status: core
+evaluated: true
+solutions: ./03-soluciones/
+---
+
+Use `files/06-pandas/estudiantes.csv` desde la raíz del proyecto.
+
+## Ejercicios
+
+1. Cree una `Series` con las notas `[8.2, 6.5, 9.0]` y los índices `E01`, `E02`, `E03`.
+2. Cree un `DataFrame` desde un diccionario de listas con nombre, carrera y semestre de tres estudiantes.
+3. Cree un `DataFrame` de una columna, llamada `nota`, directamente desde la lista `[8.2, 6.5, 9.0]`.
+4. Convierta esa lista en un arreglo NumPy 1D y cree otro `DataFrame` de una columna.
+5. Lea el CSV indicando `sep`, `header` e `index_col`. Muestre `info()`, las primeras tres filas y las últimas dos.
+6. Seleccione `E03` mediante `loc` y la tercera fila mediante `iloc`. Explique por qué coinciden.
+7. Seleccione las columnas `nombre` y `nota`. Cree `nota_porcentual` multiplicando la nota por 10.
+8. Calcule media, suma, mínimo y máximo de `nota`. Obtenga también los códigos con `idxmin()` e `idxmax()`.
+9. Filtre quienes tengan nota mínima de 6 y asistencia mínima de 0.80.
+10. Filtre quienes pertenezcan a `Computación` o `Mecánica` usando `isin()`.
+11. Cree la columna `estado`, inicialmente `Aprobado`, y cambie a `Reprobado` los casos con nota menor a 6 mediante `mask()`.
+12. Ordene por carrera ascendente y nota descendente. Luego ordene el original por nombre usando `inplace=True`.
+13. Muestre carreras únicas y cantidad de estudiantes por carrera con `unique()` y `value_counts()`.
+14. Calcule la nota media y la asistencia media por carrera mediante `groupby()`.
+15. Exporte el resultado como `estudiantes_procesados.csv`.
+
+## Entrega esperada
+
+- Código ejecutable.
+- Una frase que responda qué carrera tiene el mayor promedio de nota.
+- Una breve comparación entre `loc` e `iloc`.
+- Ningún filtro compuesto construido con operadores escalares de Python.

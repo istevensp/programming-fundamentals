@@ -1,0 +1,91 @@
+version: 1
+
+module:
+  id: unit-05
+  number: 5
+  slug: diccionarios
+  title: Diccionarios
+  status: core
+  evaluated: true
+  source:
+    sheet: Contenidos
+    range: A37:C42
+
+purpose: >-
+  Modelar relaciones clave-valor y resolver tareas sencillas de conteo,
+  transformación y filtrado.
+
+prerequisites:
+  - unit-04
+
+learning_outcomes:
+  - Crear diccionarios de un nivel con claves y valores apropiados.
+  - Utilizar un diccionario para contar frecuencias.
+  - Construir diccionarios a partir de listas o cadenas con formato conocido.
+  - Derivar un diccionario a partir de otro.
+  - Recorrer y filtrar pares clave-valor.
+  - Explicar los riesgos de invertir claves y valores.
+
+core_topics:
+  - id: u05-t01
+    title: Diccionarios de un nivel
+    status: core
+    evaluated: true
+    constraints:
+      - Se permite como máximo una lista simple como valor.
+  - id: u05-t02
+    title: Conteo con diccionarios
+    status: core
+    evaluated: true
+    example: Frecuencia de palabras.
+  - id: u05-t03
+    title: Creación desde listas o cadenas
+    status: core
+    evaluated: true
+  - id: u05-t04
+    title: Creación desde otros diccionarios
+    status: core
+    evaluated: true
+  - id: u05-t05
+    title: Recorrido y filtrado
+    status: core
+    evaluated: true
+  - id: u05-t06
+    title: Inversión de claves y valores
+    status: core
+    evaluated: true
+    emphasis:
+      - valores repetidos
+      - colisiones de claves
+      - posible pérdida de información
+
+assessment_evidence:
+  - Construye una tabla de frecuencias con un diccionario.
+  - Transforma datos secuenciales en pares clave-valor.
+  - Filtra un diccionario mediante una condición explícita.
+  - Determina si un diccionario puede invertirse sin perder información.
+
+restrictions:
+  - id: u05-r01
+    status: prohibited
+    rule: No utilizar diccionarios anidados.
+  - id: u05-r02
+    status: prohibited
+    rule: Como valor solo se permite, como máximo, una lista simple.
+
+excluded_topics:
+  - id: u05-x01
+    title: Diccionarios multinivel
+    status: excluded
+    evaluated: false
+    publish: false
+
+supplementary_topics: []
+
+pages:
+  index: content/docs/05-diccionarios/index.mdx
+  content: content/docs/05-diccionarios/01-contenido.mdx
+  practice: content/docs/05-diccionarios/02-practica.mdx
+  solutions: content/docs/05-diccionarios/03-soluciones.mdx
+materials_catalog: content/materials/05-diccionarios.yaml
+

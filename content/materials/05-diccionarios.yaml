@@ -1,0 +1,11 @@
+version: 1
+module: unit-05
+title: Diccionarios
+status: complete
+source: {file: FP2026-II Ayudantes.xlsx, sheet: Contenidos, range: A37:C42}
+items:
+  - {id: u05-index, title: Ruta de la unidad, type: mdx, role: index, status: core, evaluated: true, path: content/docs/05-diccionarios/index.mdx}
+  - {id: u05-content, title: Diccionarios de un nivel, type: mdx, role: lesson, status: core, evaluated: true, path: content/docs/05-diccionarios/01-contenido.mdx}
+  - {id: u05-practice, title: Práctica de la Unidad 05, type: mdx, role: practice, status: core, evaluated: true, path: content/docs/05-diccionarios/02-practica.mdx}
+  - {id: u05-solutions, title: Soluciones de la Unidad 05, type: mdx, role: solutions, status: core, evaluated: false, visibility: instructor-or-after-attempt, path: content/docs/05-diccionarios/03-soluciones.mdx}
+  - {id: u05-code, title: Resumen ejecutable de la Unidad 05, type: python, role: example, status: core, evaluated: false, path: code/05-diccionarios/resumen_unidad.py}

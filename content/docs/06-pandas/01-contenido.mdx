@@ -1,0 +1,296 @@
+---
+title: "Series y DataFrame"
+module: unit-06
+lesson: u06-content
+status: core
+evaluated: true
+---
+
+## 1. Introducción
+
+Pandas es una biblioteca para trabajar con datos etiquetados y tabulares. Se importa habitualmente con el alias `pd`.
+
+```python
+import pandas as pd
+```
+
+Una `Series` representa una secuencia unidimensional con índice. Un `DataFrame` representa una tabla con filas y columnas.
+
+## 2. Crear una `Series`
+
+Desde una lista, Pandas crea por defecto un índice numérico desde cero:
+
+```python
+notas = pd.Series([8.5, 7.2, 9.1])
+```
+
+También se puede definir un índice no numérico:
+
+```python
+notas = pd.Series([8.5, 7.2, 9.1], index=["Ana", "Luis", "Marta"])
+```
+
+Desde un diccionario, sus claves se convierten en índices:
+
+```python
+notas = pd.Series({"Ana": 8.5, "Luis": 7.2, "Marta": 9.1})
+```
+
+Desde un arreglo unidimensional:
+
+```python
+import numpy as np
+
+temperaturas = np.array([29.4, 30.1, 28.7])
+serie_temperaturas = pd.Series(temperaturas)
+```
+
+## 3. Crear un `DataFrame`
+
+Una lista simple crea un `DataFrame` de una columna cuando se proporciona su nombre:
+
+```python
+notas_lista = [8.5, 7.2, 9.1]
+tabla_desde_lista = pd.DataFrame(notas_lista, columns=["nota"])
+```
+
+Un arreglo NumPy unidimensional también produce una tabla de una columna:
+
+```python
+notas_arreglo = np.array([8.5, 7.2, 9.1])
+tabla_desde_arreglo = pd.DataFrame(notas_arreglo, columns=["nota"])
+```
+
+Un diccionario de listas crea una columna por cada clave. Todas las listas deben tener igual longitud.
+
+```python
+datos = {
+    "nombre": ["Ana", "Luis", "Marta", "José"],
+    "paralelo": ["A", "B", "A", "B"],
+    "nota": [8.5, 5.4, 9.0, 6.8],
+    "asistencia": [0.90, 0.75, 0.95, 0.82]
+}
+
+estudiantes = pd.DataFrame(datos)
+```
+
+Así quedan cubiertas las tres fuentes de la unidad: lista, arreglo 1D y diccionario. Para obtener varias columnas desde listas, el diccionario asigna explícitamente el nombre y los valores de cada columna.
+
+Se puede asignar un índice etiquetado:
+
+```python
+estudiantes.index = ["E01", "E02", "E03", "E04"]
+```
+
+## 4. Seleccionar filas: `.loc` y `.iloc`
+
+`.loc` selecciona por etiquetas del índice:
+
+```python
+print(estudiantes.loc["E02"])
+print(estudiantes.loc[["E01", "E03"]])
+```
+
+`.iloc` selecciona por posición entera:
+
+```python
+print(estudiantes.iloc[1])
+print(estudiantes.iloc[0:2])
+```
+
+En un corte con `.loc`, la etiqueta final se incluye; en un corte de posiciones con `.iloc`, la posición final se excluye.
+
+## 5. Seleccionar y crear columnas
+
+Una columna se obtiene como `Series`:
+
+```python
+print(estudiantes["nota"])
+```
+
+Varias columnas se seleccionan con una lista de nombres:
+
+```python
+print(estudiantes[["nombre", "nota"]])
+```
+
+Una columna nueva puede calcularse a partir de otras:
+
+```python
+estudiantes["nota_porcentual"] = estudiantes["nota"] * 10
+```
+
+## 6. Inspección y resumen
+
+```python
+estudiantes.info()
+print(estudiantes.head())
+print(estudiantes.tail(2))
+print(estudiantes.describe())
+```
+
+Operaciones estadísticas sobre una columna:
+
+```python
+print(estudiantes["nota"].mean())
+print(estudiantes["nota"].sum())
+print(estudiantes["nota"].min())
+print(estudiantes["nota"].max())
+```
+
+`info()` muestra tipos de datos y valores no nulos; `describe()` resume las columnas numéricas.
+
+## 7. Leer y escribir CSV
+
+El archivo de práctica usa comas, primera fila como encabezado y `codigo` como índice:
+
+```python
+estudiantes = pd.read_csv(
+    "files/06-pandas/estudiantes.csv",
+    sep=",",
+    header=0,
+    index_col="codigo"
+)
+```
+
+- `sep` indica el separador.
+- `header` identifica la fila de encabezados; `0` significa la primera.
+- `index_col` indica la columna que será índice.
+
+Para exportar:
+
+```python
+estudiantes.to_csv("estudiantes_procesados.csv", index=True)
+```
+
+## 8. Operaciones aritméticas entre `Series`
+
+Pandas alinea los datos por sus índices antes de operar.
+
+```python
+parcial = pd.Series({"Ana": 8.0, "Luis": 7.0, "Marta": 9.0})
+proyecto = pd.Series({"Ana": 9.0, "Luis": 6.0, "Marta": 8.5})
+promedio = (parcial + proyecto) / 2
+```
+
+Si los índices no coinciden, revise el resultado: una etiqueta sin pareja puede producir un valor ausente.
+
+## 9. Comparaciones y filtros booleanos
+
+Una comparación crea una `Series` de valores booleanos.
+
+```python
+aprobacion = estudiantes["nota"] >= 6
+aprobados = estudiantes[aprobacion]
+```
+
+Para combinar condiciones, use `&` y `|`, colocando cada comparación entre paréntesis:
+
+```python
+seleccion = estudiantes[
+    (estudiantes["nota"] >= 6) &
+    (estudiantes["asistencia"] >= 0.80)
+]
+
+casos_revision = estudiantes[
+    (estudiantes["nota"] < 6) |
+    (estudiantes["asistencia"] < 0.80)
+]
+```
+
+## 10. Reemplazo condicional con `.mask`
+
+`mask` reemplaza los valores donde la condición es verdadera.
+
+```python
+estudiantes["estado"] = "Aprobado"
+estudiantes["estado"] = estudiantes["estado"].mask(
+    estudiantes["nota"] < 6,
+    "Reprobado"
+)
+```
+
+Si se requieren más de dos alternativas, `np.select` es una ampliación opcional dentro de esta unidad:
+
+```python
+import numpy as np
+
+condiciones = [
+    estudiantes["nota"] >= 9,
+    estudiantes["nota"] >= 6
+]
+resultados = ["Excelente", "Aprobado"]
+estudiantes["categoria"] = np.select(
+    condiciones,
+    resultados,
+    default="Reprobado"
+)
+```
+
+## 11. Localizar extremos
+
+`idxmax()` e `idxmin()` devuelven la etiqueta del índice donde aparece el máximo o mínimo. Si existe empate, devuelven la primera etiqueta correspondiente.
+
+```python
+codigo_mayor = estudiantes["nota"].idxmax()
+codigo_menor = estudiantes["nota"].idxmin()
+print(estudiantes.loc[codigo_mayor])
+print(estudiantes.loc[codigo_menor])
+```
+
+## 12. Ordenar
+
+Una columna:
+
+```python
+ordenados = estudiantes.sort_values("nota", ascending=False)
+```
+
+Varias columnas:
+
+```python
+ordenados = estudiantes.sort_values(
+    ["paralelo", "nota"],
+    ascending=[True, False]
+)
+```
+
+Con `inplace=True`, se modifica el `DataFrame` original:
+
+```python
+estudiantes.sort_values("nombre", inplace=True)
+```
+
+## 13. Únicos, frecuencias y pertenencia
+
+```python
+print(estudiantes["paralelo"].unique())
+print(estudiantes["paralelo"].value_counts())
+
+paralelos_interes = estudiantes[
+    estudiantes["paralelo"].isin(["A", "C"])
+]
+```
+
+- `unique()` devuelve los valores diferentes.
+- `value_counts()` cuenta cada valor.
+- `isin()` indica si cada elemento pertenece a una colección.
+
+## 14. Agrupar por categoría
+
+`groupby` reúne filas que comparten una categoría y permite resumir cada grupo.
+
+```python
+promedio_por_paralelo = estudiantes.groupby("paralelo")["nota"].mean()
+conteo_por_paralelo = estudiantes.groupby("paralelo")["nota"].count()
+```
+
+La pregunta debe definir la agrupación y el resumen: “¿cuál es la nota media por paralelo?” combina `groupby("paralelo")` con `mean()`.
+
+## Lista de control
+
+- ¿Distingo etiquetas (`loc`) de posiciones (`iloc`)?
+- ¿Las condiciones combinadas tienen paréntesis y usan `&` o `|`?
+- ¿Sé si una operación modifica el original o devuelve otro objeto?
+- ¿Revisé los índices antes de operar entre `Series`?
+- ¿La agrupación responde una pregunta concreta?

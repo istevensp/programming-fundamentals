@@ -1,0 +1,124 @@
+version: 1
+
+module:
+  id: unit-04
+  number: 4
+  slug: estructuras-control
+  title: Estructuras de control
+  status: core
+  evaluated: true
+  source:
+    sheet: Contenidos
+    range: A22:C36
+
+purpose: >-
+  Construir algoritmos que tomen decisiones y repitan operaciones mediante un
+  flujo explícito, comprensible y verificable.
+
+prerequisites:
+  - unit-03
+
+learning_outcomes:
+  - Construir decisiones con if, if-else e if-elif-else.
+  - Recorrer rangos y colecciones con for.
+  - Utilizar enumerate cuando se requieran índice y valor.
+  - Combinar estructuras de control mediante anidamiento.
+  - Resolver máximos y mínimos considerando empates.
+  - Prevenir o eliminar valores repetidos sin estructuras fuera de alcance.
+  - Explicar una list comprehension antes de utilizarla.
+  - Diseñar condiciones de terminación claras para ciclos while.
+
+core_topics:
+  - id: u04-t01
+    title: Condicionales
+    status: core
+    evaluated: true
+    concepts:
+      - if
+      - if-else
+      - if-elif-else
+  - id: u04-t02
+    title: Iteración con for
+    status: core
+    evaluated: true
+    concepts:
+      - for con range
+      - for sobre una colección
+      - for con enumerate
+  - id: u04-t03
+    title: Anidamiento de estructuras
+    status: core
+    evaluated: true
+  - id: u04-t04
+    title: Búsqueda de mayor y menor
+    status: core
+    evaluated: true
+    emphasis:
+      - casos sin empate
+      - casos con empate
+  - id: u04-t05
+    title: Listas sin valores repetidos
+    status: core
+    evaluated: true
+  - id: u04-t06
+    title: List comprehensions explicables
+    status: core
+    evaluated: true
+    condition: El estudiante debe poder explicar su funcionamiento paso a paso.
+  - id: u04-t07
+    title: Ciclo while
+    status: core
+    evaluated: true
+    sequence_note: Debe impartirse al final de la unidad.
+  - id: u04-t08
+    title: Condiciones compuestas y funciones booleanas
+    status: core
+    evaluated: true
+    purpose: Evitar banderas booleanas como mecanismo de control del ciclo.
+
+assessment_evidence:
+  - Implementa decisiones de dos y múltiples alternativas.
+  - Recorre una colección con y sin necesidad de índice.
+  - Resuelve máximos o mínimos conservando todos los empates requeridos.
+  - Construye un ciclo while con condición de terminación explícita.
+  - Reescribe una solución con bandera mediante una condición o función booleana.
+
+restrictions:
+  - id: u04-r01
+    status: prohibited
+    rule: No usar break.
+  - id: u04-r02
+    status: prohibited
+    rule: No usar continue.
+  - id: u04-r03
+    status: prohibited
+    rule: No usar pass.
+  - id: u04-r04
+    status: discouraged
+    rule: Evitar variables booleanas usadas como banderas para controlar while.
+  - id: u04-r05
+    status: prohibited
+    rule: No utilizar manejo de excepciones con try-except.
+
+excluded_topics:
+  - id: u04-x01
+    title: Manejo de excepciones
+    status: excluded
+    evaluated: false
+    publish: false
+
+supplementary_topics: []
+
+pages:
+  index: content/docs/04-estructuras-control/index.mdx
+  content: content/docs/04-estructuras-control/01-contenido.mdx
+  practice: content/docs/04-estructuras-control/02-practica.mdx
+  solutions: content/docs/04-estructuras-control/03-soluciones.mdx
+materials_catalog: content/materials/04-estructuras-control.yaml
+
+references:
+  - title: Stop Using Flags to Control Your Loops
+    url: https://therenegadecoder.com/code/stop-using-flags-to-control-your-loops/
+  - title: Is it a code smell to set a flag in a loop to use it later?
+    url: https://softwareengineering.stackexchange.com/questions/364418/is-it-a-code-smell-to-set-a-flag-in-a-loop-to-use-it-later
+

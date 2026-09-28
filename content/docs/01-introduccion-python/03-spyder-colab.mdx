@@ -1,0 +1,170 @@
+---
+title: "1.3 Primeros pasos con Spyder y Google Colab"
+description: "Crear, ejecutar, guardar y revisar programas sencillos en los entornos autorizados."
+sidebar:
+  order: 3
+module: unit-01
+topic: u01-t03
+status: core
+evaluated: true
+---
+
+Durante la materia utilizaremos **Spyder** y **Google Colab**. Ambos permiten escribir y ejecutar Python, pero organizan el trabajo de forma diferente.
+
+## Comparación rápida
+
+| Aspecto | Spyder | Google Colab |
+|---|---|---|
+| Tipo de entorno | Aplicación instalada | Servicio web de notebooks |
+| Unidad principal de trabajo | Archivo `.py` | Cuaderno `.ipynb` con celdas |
+| Conexión a internet | No siempre necesaria | Normalmente necesaria |
+| Lugar de ejecución | Computadora local | Máquina virtual asociada a la cuenta |
+| Salida | Consola de IPython | Debajo de cada celda |
+| Uso recomendado en esta unidad | Programas completos | Pruebas por bloques y actividades guiadas |
+
+## Flujo de trabajo en Spyder
+
+### 1. Crear un archivo
+
+Abre un archivo nuevo en el editor y escribe:
+
+```python
+# Primer programa del curso
+print("Fundamentos de Programación")
+print("Entorno: Spyder")
+```
+
+### 2. Guardar
+
+Utiliza un nombre descriptivo y la extensión `.py`:
+
+```text
+01_hola_fundamentos.py
+```
+
+Evita nombres como `prueba final ahora sí.py`. Una convención consistente facilita localizar los archivos.
+
+### 3. Ejecutar
+
+Spyder permite ejecutar el archivo completo desde el menú **Run**, el botón correspondiente o la tecla `F5`. La salida y los errores aparecen en la consola de IPython.
+
+### 4. Revisar
+
+Comprueba:
+
+- que el archivo correcto esté abierto;
+- que los cambios se hayan guardado;
+- que la consola muestre la salida esperada;
+- que no exista un mensaje de error pendiente.
+
+## Flujo de trabajo en Google Colab
+
+Colab organiza el trabajo en celdas. Una celda de texto explica; una celda de código contiene instrucciones ejecutables.
+
+### 1. Crear un cuaderno
+
+Abre Google Colab y crea un cuaderno nuevo. Cambia el nombre por uno descriptivo:
+
+```text
+U01_Primer_programa.ipynb
+```
+
+### 2. Escribir una celda
+
+```python
+# Primer programa del curso
+print("Fundamentos de Programación")
+print("Entorno: Google Colab")
+```
+
+### 3. Ejecutar la celda
+
+Usa el botón de ejecución situado junto a la celda. La salida aparecerá debajo.
+
+### 4. Interpretar el estado
+
+La marca de ejecución de una celda indica que fue ejecutada, pero no garantiza que todas las celdas estén actualizadas. Si modificas una celda, vuelve a ejecutarla para actualizar su salida.
+
+## Archivo frente a notebook
+
+En un archivo `.py`, ejecutar normalmente significa recorrer el programa completo desde el inicio.
+
+En un notebook, las celdas pueden ejecutarse en distinto orden. Esto resulta cómodo para experimentar, pero puede producir confusión si la salida visible corresponde a una versión anterior del código.
+
+En esta unidad adoptaremos una regla sencilla:
+
+> Ejecuta las celdas de arriba hacia abajo y vuelve a ejecutar cualquier celda que modifiques.
+
+## Procedimiento común de verificación
+
+Sin importar el entorno:
+
+1. **Lee** el código.
+2. **Predice** la salida.
+3. **Ejecuta**.
+4. **Compara** la salida real con la predicción.
+5. **Explica** cualquier diferencia.
+6. **Guarda** la versión corregida.
+
+## Diagnóstico básico
+
+### No aparece ninguna salida
+
+- Comprueba que exista una instrucción `print()`.
+- Verifica que ejecutaste el archivo o la celda correcta.
+- En Colab, confirma que la celda haya terminado.
+
+### Aparece una salida anterior
+
+- Guarda el archivo antes de ejecutar en Spyder.
+- Vuelve a ejecutar la celda modificada en Colab.
+
+### Python señala un error de sintaxis
+
+- Revisa comillas y paréntesis.
+- Confirma que escribiste `print` en minúsculas.
+- Corrige una cosa a la vez.
+
+### El archivo no se encuentra
+
+- Identifica la carpeta donde fue guardado.
+- No crees copias con nombres ambiguos.
+- Mantén una carpeta por unidad.
+
+## Apoyo formativo no evaluable: organización recomendada
+
+```text
+fundamentos-programacion/
+└── unidad-01/
+    ├── 01_hola_fundamentos.py
+    ├── 02_ejecucion_secuencial.py
+    └── U01_Primer_programa.ipynb
+```
+
+## Apoyo formativo no evaluable: seguridad en notebooks
+
+Un notebook puede contener código que modifica archivos o accede a recursos. Ejecuta únicamente cuadernos cuyo origen conozcas y revisa las celdas antes de ejecutarlas. Para esta unidad no es necesario montar Google Drive ni conectar un runtime local.
+
+## Actividad de comparación
+
+1. Ejecuta el mismo programa en Spyder y Colab.
+2. Registra dónde aparece la salida en cada entorno.
+3. Cambia el segundo mensaje.
+4. Predice la nueva salida.
+5. Ejecuta nuevamente.
+6. Explica una diferencia entre archivo y notebook.
+
+## Lista de comprobación
+
+- [ ] Puedo crear y guardar un archivo `.py`.
+- [ ] Puedo ejecutar un archivo completo en Spyder.
+- [ ] Puedo crear y ejecutar una celda en Colab.
+- [ ] Sé dónde aparece la salida en cada entorno.
+- [ ] Predigo la salida antes de ejecutar.
+- [ ] Puedo localizar la línea indicada por un error.
+
+## Recursos oficiales
+
+- [Ejecución de código en el editor de Spyder](https://docs.spyder-ide.org/current/panes/editor.html)
+- [Preguntas frecuentes de Google Colab](https://research.google.com/colaboratory/intl/es/faq.html)
+

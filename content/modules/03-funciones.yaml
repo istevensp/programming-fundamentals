@@ -1,0 +1,95 @@
+version: 1
+
+module:
+  id: unit-03
+  number: 3
+  slug: funciones
+  title: Funciones
+  status: core
+  evaluated: true
+  source:
+    sheet: Contenidos
+    range: A12:C21
+
+purpose: >-
+  Dividir una solución en operaciones reutilizables con entradas, resultados y
+  responsabilidades claras.
+
+prerequisites:
+  - unit-02
+
+learning_outcomes:
+  - Definir funciones con una responsabilidad específica.
+  - Utilizar parámetros obligatorios y parámetros por defecto.
+  - Retornar uno o varios valores.
+  - Resolver problemas sin depender de variables globales.
+  - Encapsular verificaciones en funciones booleanas.
+
+core_topics:
+  - id: u03-t01
+    title: Creación de funciones
+    status: core
+    evaluated: true
+  - id: u03-t02
+    title: Parámetros y parámetros por defecto
+    status: core
+    evaluated: true
+  - id: u03-t03
+    title: Retorno de múltiples valores
+    status: core
+    evaluated: true
+  - id: u03-t04
+    title: Independencia de variables externas
+    status: core
+    evaluated: true
+  - id: u03-t05
+    title: Funciones booleanas
+    status: core
+    evaluated: true
+
+assessment_evidence:
+  - Implementa una función con parámetros y valor de retorno.
+  - Usa un parámetro por defecto sin duplicar funciones.
+  - Descompone un resultado en múltiples valores retornados.
+  - Reemplaza una verificación repetida por una función booleana.
+
+restrictions:
+  - id: u03-r01
+    status: prohibited
+    rule: Las funciones no deben utilizar variables globales como entrada implícita.
+
+excluded_topics:
+  - id: u03-x01
+    title: Creación de módulos o librerías
+    status: excluded
+    evaluated: false
+    publish: false
+    reason: Tema tachado por Coordinación.
+  - id: u03-x02
+    title: Análisis profundo de parámetros por valor y referencia
+    status: excluded
+    evaluated: false
+    publish: false
+    reason: Tema tachado por Coordinación.
+  - id: u03-x03
+    title: Ventajas y desventajas del uso de inteligencia artificial
+    status: excluded
+    evaluated: false
+    publish: false
+    reason: Tema tachado por Coordinación.
+  - id: u03-x04
+    title: Vibe coding y calidad de prompts
+    status: excluded
+    evaluated: false
+    publish: false
+    reason: Tema tachado por Coordinación.
+
+supplementary_topics: []
+
+pages:
+  index: content/docs/03-funciones/index.mdx
+  content: content/docs/03-funciones/01-contenido.mdx
+  practice: content/docs/03-funciones/02-practica.mdx
+  solutions: content/docs/03-funciones/03-soluciones.mdx
+materials_catalog: content/materials/03-funciones.yaml
+

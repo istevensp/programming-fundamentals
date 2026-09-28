@@ -1,0 +1,95 @@
+---
+title: "Soluciones — Unidad 05"
+module: unit-05
+lesson: u05-solutions
+status: core
+evaluated: false
+visibility: instructor-or-after-attempt
+---
+
+## 1. Ficha
+
+```python
+ficha = {"nombre": "Ana", "carrera": "Computación", "semestre": 1}
+print(ficha["nombre"], ficha["carrera"], ficha["semestre"])
+ficha["semestre"] = 2
+```
+
+## 2. Frecuencias
+
+```python
+frecuencias = {}
+
+for letra in "programacion":
+    frecuencias[letra] = frecuencias.get(letra, 0) + 1
+
+print(frecuencias)
+```
+
+## 3. Dos listas
+
+```python
+productos = ["pan", "leche", "arroz"]
+precios = [0.60, 1.10, 1.25]
+catalogo = {}
+
+for posicion, producto in enumerate(productos):
+    catalogo[producto] = precios[posicion]
+```
+
+## 4. Cadena estructurada
+
+```python
+texto = "A:8.5,B:7.1,C:9.0"
+calificaciones = {}
+
+for registro in texto.split(","):
+    codigo, nota = registro.split(":")
+    calificaciones[codigo] = float(nota)
+```
+
+## 5. Transformación
+
+```python
+porcentajes = {}
+
+for codigo, nota in calificaciones.items():
+    porcentajes[codigo] = nota * 10
+```
+
+## 6. Filtro
+
+```python
+notas = {"A": 8.5, "B": 5.4, "C": 9.0, "D": 6.0}
+aprobadas = {}
+
+for codigo, nota in notas.items():
+    if nota >= 6:
+        aprobadas[codigo] = nota
+```
+
+## 7. Inversión segura
+
+```python
+paises = {"EC": "Ecuador", "PE": "Perú", "CO": "Colombia"}
+codigos_por_pais = {}
+
+for codigo, pais in paises.items():
+    codigos_por_pais[pais] = codigo
+```
+
+No se pierde información porque todos los nombres de país son diferentes.
+
+## 8. Colisiones
+
+```python
+paralelos = {"Ana": "A", "Luis": "B", "Marta": "A", "José": "B"}
+estudiantes_por_paralelo = {}
+
+for estudiante, paralelo in paralelos.items():
+    if paralelo not in estudiantes_por_paralelo:
+        estudiantes_por_paralelo[paralelo] = []
+    estudiantes_por_paralelo[paralelo].append(estudiante)
+
+print(estudiantes_por_paralelo)
+```

@@ -1,0 +1,66 @@
+---
+title: "2.3 Soluciones — Datos y listas simples"
+sidebar: { order: 3 }
+module: unit-02
+status: core
+evaluated: false
+visibility: instructor-or-after-attempt
+---
+
+```python
+import random
+
+# 1
+nombre = "Ana"
+edad = 18
+estatura = 1.65
+matriculado = True
+print(nombre, type(nombre))
+print(edad, type(edad))
+print(estatura, type(estatura))
+print(matriculado, type(matriculado))
+
+# 2
+entero = int("125")
+decimal = float("19.75")
+print(entero + decimal)
+
+# 3
+texto = "  ESPOL - Guayaquil  "
+resultado = texto.strip().lower().replace("espol", "ESPOL")
+print(resultado)
+
+# 4
+codigos = ["A", "B", "A", "C", "A"]
+print("A" in codigos)
+print(codigos.index("A"))
+print(codigos.count("A"))
+
+# 5
+temas = ["datos", "strings", "listas", "random", "formato"]
+temas.append("repaso")
+temas.remove("datos")
+print(temas[0], temas[-1], len(temas))
+
+# 6
+print(random.randint(1, 6))
+print(random.choice(temas))
+estudiantes = ["Ana", "Luis", "Marta", "José"]
+print(random.choices(estudiantes, k=3))
+print(random.sample(estudiantes, k=3))
+
+# 7
+turnos = ["08h00", "09h00", "10h00", "11h00"]
+misma_lista = turnos  # otro nombre para la misma lista, no una copia
+random.shuffle(turnos)
+print(turnos)
+print(misma_lista)  # muestra el mismo orden mezclado, porque es la misma lista
+
+# 8
+producto = "Cuaderno"
+precio = 2.5
+print(f"{producto}: ${precio:.2f}")
+print("{}: ${:.2f}".format(producto, precio))
+```
+
+Los resultados aleatorios pueden cambiar entre ejecuciones. `shuffle()` trabaja sobre la lista recibida, aunque excepcionalmente el orden resultante pueda coincidir con el inicial.
