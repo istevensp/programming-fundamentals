@@ -76,6 +76,13 @@ items:
     status: core
     evaluated: false
     path: code/01-introduccion-python/03_aplicaciones_por_carrera.py
+  - id: u01-assignment-01
+    title: Deber de la Unidad 01
+    type: notebook
+    role: assignment
+    status: core
+    evaluated: true
+    path: deberes/01-introduccion-python/Deber_U01_Introduccion_Python.ipynb
 
 references:
   - title: Tutorial oficial de Python

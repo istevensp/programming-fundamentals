@@ -9,6 +9,8 @@ items:
   - {id: u02-practice, title: Práctica de la Unidad 02, type: mdx, role: practice, status: core, evaluated: true, path: content/docs/02-variables-tipos-colecciones/02-practica.mdx}
   - {id: u02-solutions, title: Soluciones de la Unidad 02, type: mdx, role: solutions, status: core, evaluated: false, visibility: instructor-or-after-attempt, path: content/docs/02-variables-tipos-colecciones/03-soluciones.mdx}
   - {id: u02-code, title: Resumen ejecutable de la Unidad 02, type: python, role: example, status: core, evaluated: false, path: code/02-variables-tipos-colecciones/resumen_unidad.py}
+  - {id: u02-assignment-01, title: "Deber de la Unidad 02 (parte 1): variables, tipos e input", type: notebook, role: assignment, status: core, evaluated: true, path: deberes/02-variables-tipos-colecciones/Deber_U02_parte1_Variables_Tipos_Input.ipynb}
+  - {id: u02-assignment-02, title: "Deber adicional de la Unidad 02 (parte 1): 7 programas", type: notebook, role: assignment, status: core, evaluated: true, path: deberes/02-variables-tipos-colecciones/Deber_U02_parte1_Adicional_7_Programas.ipynb}
 references:
   - {title: Tutorial de Python, url: https://docs.python.org/3/tutorial/introduction.html}
   - {title: Módulo random, url: https://docs.python.org/3/library/random.html}

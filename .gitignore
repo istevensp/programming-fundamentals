@@ -43,3 +43,6 @@ quarantine/
 # Contexto operativo interno (instrucciones para agentes de IA, rutas locales) —
 # no es material del curso, no debe publicarse junto con él.
 CLAUDE.md
+
+# Solucionarios de los deberes: no se publican en el repositorio público
+*_SOLUCIONARIO.ipynb

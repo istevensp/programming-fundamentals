@@ -44,6 +44,7 @@ content/docs/            páginas MDX (portada, contenido, práctica, soluciones
 content/materials/       catálogo YAML de materiales, uno por unidad
 code/                    ejemplos ejecutables en Python, uno o más por unidad
 files/                   datasets públicos usados en las prácticas (CSV)
+deberes/                 cuadernos de deberes (.ipynb) para abrir en Google Colab, uno por unidad
 ```
 
 ## Estados de contenido
