@@ -46,3 +46,5 @@ CLAUDE.md
 
 # Solucionarios de los deberes: no se publican en el repositorio público
 *_SOLUCIONARIO.ipynb
+# Scripts que generan los deberes: contienen las soluciones en su código
+deberes/_generador/
