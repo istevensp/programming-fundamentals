@@ -48,3 +48,5 @@ CLAUDE.md
 *_SOLUCIONARIO.ipynb
 # Scripts que generan los deberes: contienen las soluciones en su código
 deberes/_generador/
+# Documento interno del docente sobre los deberes
+deberes/DOCENTE.md
