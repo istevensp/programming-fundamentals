@@ -9,3 +9,4 @@ items:
   - {id: u03-practice, title: Práctica de la Unidad 03, type: mdx, role: practice, status: core, evaluated: true, path: content/docs/03-funciones/02-practica.mdx}
   - {id: u03-solutions, title: Soluciones de la Unidad 03, type: mdx, role: solutions, status: core, evaluated: false, visibility: instructor-or-after-attempt, path: content/docs/03-funciones/03-soluciones.mdx}
   - {id: u03-code, title: Resumen ejecutable de la Unidad 03, type: python, role: example, status: core, evaluated: false, path: code/03-funciones/resumen_unidad.py}
+  - {id: u03-assignment-01, title: "Deber de la Unidad 03: funciones", type: notebook, role: assignment, status: core, evaluated: true, path: deberes/03-funciones/Deber_U03_Funciones.ipynb}
